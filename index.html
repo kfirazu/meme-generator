@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Meme-Generator</title>
 </head>
-<body>
+
+<body onload="initCanvas()">
     <header>
         <ul>
             <li>logo</li>
@@ -17,17 +19,31 @@
         </ul>
     </header>
     <section class="meme-editor">
-        <input type="text">
-        <button></button>
+        <div class="canvas-container">
+            <canvas class="canvas" width="450px" height="450px" style="outline:1px solid green"></canvas>
+        </div>
+        <aside class="control-box">
+            <input type="text" class="text-input" placeholder="Enter text here.." oninput="onSetLineText(this.value)">
+            <button>move up</button>
+            <button>move down</button>
+            <button>switch</button>
+            <button>add text line</button>
+            <button class="">delete text line</button>
+        </aside>
+
     </section>
-    
+
     <main class="gallery">
-        <img src="" alt="">
+
+
+        <!-- create grid -->
+        <img src="img/gallery/1.jpg" alt="" hidden>
     </main>
-    
+
     <script src="js/services/meme.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
-    <script src="js/controllers/editor-controller.js"></script>
+    <script src="js/controllers/meme-controller.js"></script>
     <script src="js/controllers/gallery-controller.js"></script>
 </body>
+
 </html>
