@@ -22,7 +22,6 @@ var gMeme = {
 }
 
 
-
 function setLineText(text) {
     gMeme.lines[gMeme.selectedLineIdx] = text
 }

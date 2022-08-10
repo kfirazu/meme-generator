@@ -12,8 +12,8 @@
 <body onload="initCanvas()">
     <header class="main header main layout">
         <div class="main header-container flex align-cneter space-between">
-            <div class="logo"> <img src="/img/LOGO.png" alt=""></div>
-            <nav class="main-nav">
+            <div class="logo"> <img src="img/logo.png" alt=""></div>
+            <nav class="main-nav flex">
                 <ul class="main-nav-list clean-list flex space-between">
                     <li>logo</li>
                     <li>Gallery</li>
@@ -41,11 +41,10 @@
             </aside>
         </section>
         <section class="gallery">
-        <!-- create grid -->
-        <img src="img/gallery/1.jpg" alt="" hidden>
+            <!-- create grid -->
+            <img src="img/gallery/1.jpg" alt="" hidden>
 
-    </section>
-
+        </section>
     </main>
 
     <script src="js/services/meme.service.js"></script>
@@ -53,5 +52,11 @@
     <script src="js/controllers/meme-controller.js"></script>
     <script src="js/controllers/gallery-controller.js"></script>
 </body>
+
+<footer class="main-footer-container flex">
+    <div class="main-footer flex align-cneter justify-center"></div>
+    <div class="logo"> <img src="img/logo.png" alt=""></div>
+    <small>Made By Kfir Azulay</small>
+</footer>
 
 </html>
