@@ -12,13 +12,16 @@ function initCanvas() {
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
-    img.src = `img/gallery/${meme.selectetImgId}.jpg`
+    const imgData = getImgById(meme.selectedImgId)
+    img.src = imgData.url
+    // img.src = `../img/gallery/${meme.selectetImgId}.jpg`
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        let { txt, size, align, color } = meme.lines[0]
+        // let { txt, size, align, color } = meme.lines[0]
         drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
     }
 }
+
 
 
 
