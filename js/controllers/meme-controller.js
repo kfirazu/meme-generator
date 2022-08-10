@@ -14,37 +14,13 @@ function renderMeme() {
     const img = new Image()
     const imgData = getImgById(meme.selectedImgId)
     img.src = imgData.url
-    // img.src = `../img/gallery/${meme.selectetImgId}.jpg`
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        // let { txt, size, align, color } = meme.lines[0]
+        let { txt, size, align, color } = meme.lines[0]
         drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
     }
 }
 
-
-
-
-// function drawMeme(imgUrl, textLines) {
-//     const meme = getMeme()
-//     const image = new Image()
-//     image.src = imgUrl
-//     gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
-//     drawText('Enter text here', gElCanvas.width / 2, gElCanvas.height / 10)
-
-
-// function drawMeme(imgUrl, textLines) {
-//     console.log('imgUrl:', imgUrl)
-//     const img = new Image()
-//     img.src = `img/gallery/${meme.selectetImgId}.jpg`
-//     img.onload = () => {
-//         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-//         let { txt, size, align, color } = meme.lines[0]
-//         drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
-
-
-//     }
-// }
 
 function onOpenMemeEditor() {
     const elGallery = document.querySelector('.gallery')
@@ -66,10 +42,41 @@ function drawText(txt, x, y, align, color, size) {
     gCtx.closePath()
 }
 
-function onSetLineText(text) {
+function onSetLineText(text, event) {
+    const elText = document.querySelector('.text-input');
+    elText.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            console.log('Enter key pressed')
+        }
+    });
     setLineText(text)
     renderMeme()
 }
+
+function onAddLine() {
+    gMeme.lines.push({ txt: 'Add text', size: 20, align: 'center', color: 'white' })
+    console.log('txt:', txt)
+    renderMeme()
+}
+
+function onSetTextColor(){
+    setTextColor(color)
+    renderMeme()
+}
+
+function onIncreaseFontSize(){
+    increaseFontSize(size)
+    renderMeme
+}
+
+function onDecreaseFontSize(){
+    decreaseFontSize(size)
+    renderMeme()
+}
+
+
+
+
 
 
 

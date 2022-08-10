@@ -4,30 +4,48 @@
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
-    lines: [{
-        txt: 'I sometimes eat Falafel',  //idx 0
-        size: 20,
-        align: 'left',
-        color: 'black'
-    },
-
-    {
-        txt: 'hello', //idx 1
-        size: 20,
-        align: 'left',
-        color: 'white'
-
-    }
+    lines: [
+        // {
+        //     txt: 'Hello',
+        //     fontSize: 30,
+        //     align: 'top',
+        //     color: 'white'
+        // },
+        // {
+        //     txt: 'World',
+        //     fontSize: 30,
+        //     align: 'bottom',
+        //     color: 'white'
+        // }
     ]
 }
 
+function setImg(imgId) {
+    gMeme.selectedImgId = imgId
+}
 
-function setLineText(text) {
-    gMeme.lines[gMeme.selectedLineIdx] = text
+function setLineText(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
 
 function getMeme() {
     return gMeme
 }
+
+function setTextColor(color){
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+}
+
+function increaseFontSize(){
+    if (gMeme.lines[gMeme.selectedLineIdx].size === 100) return
+    gMeme.lines[gMeme.selectedLineIdx].size += 10
+}
+
+function decreaseFontSize(){
+    if (gMeme.lines[gMeme.selectedLineIdx].size === 10) return
+    gMeme.lines[gMeme.selectedLineIdx].size -= 10
+}
+
+
 

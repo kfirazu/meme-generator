@@ -1,5 +1,9 @@
 'use strict'
 
+function onInit(){
+    renderGallery()
+}
+
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
     const imgs = getImages()
@@ -8,7 +12,11 @@ function renderGallery() {
 }
 
 function onImgSelect() {
-    
+    setImg()
+    onOpenMemeEditor()
+    // initCanvas()
+    renderMeme()
+
 }
 
 function getImages() {

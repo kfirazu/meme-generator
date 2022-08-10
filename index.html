@@ -12,7 +12,7 @@
 <body onload="initCanvas()">
     <header class="main header main layout">
         <div class="main header-container flex align-cneter space-between">
-            <div class="logo"> <img src="img/logo.png" alt=""></div>
+            <div class="logo"> <img src="img/logo.png" alt="logo-image"></div>
             <nav class="main-nav flex">
                 <ul class="main-nav-list clean-list flex space-between">
                     <li>logo</li>
@@ -26,7 +26,7 @@
 
 
     <main class="main content main-layout">
-        <section class="meme-editor">
+        <section class="meme-editor" >
             <div class="canvas-container">
                 <canvas class="canvas" width="450px" height="450px" style="outline:1px solid green"></canvas>
             </div>
@@ -35,13 +35,16 @@
                 <button>move up</button>
                 <button>move down</button>
                 <button>switch</button>
-                <button>add text line</button>
+                <button onclick="onIncreaseFontSize()">A+</button>
+                <button onclick="onDecreaseFontSize()">A-</button>
+                <input type="color" class="txt-color" name="color-picker" onchange="onSetTextColor(this.value)"/>
+                <button onclick="onAddLine(this, event)">add text line</button>
                 <button class="">delete text line</button>
             </aside>
         </section>
         <section class="gallery">
             <!-- create grid -->
-            <img src="img/gallery/1.jpg" alt="" hidden>
+            <!-- <img src="img/gallery/1.jpg" alt="logo-" hidden> -->
 
         </section>
     </main>
