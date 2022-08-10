@@ -11,29 +11,52 @@ function initCanvas() {
 
 function renderMeme() {
     const meme = getMeme()
-    const image = new Image()
-    image.src = 'img/gallery/1.jpg'
-    gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText('Enter text here', gElCanvas.width / 2, gElCanvas.height / 10)
-
+    const img = new Image()
+    img.src = `img/gallery/${meme.selectetImgId}.jpg`
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+        let { txt, size, align, color } = meme.lines[0]
+        drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
+    }
 }
 
 
 
-function drawText(txt, x, y) {
+// function drawMeme(imgUrl, textLines) {
+//     const meme = getMeme()
+//     const image = new Image()
+//     image.src = imgUrl
+//     gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
+//     drawText('Enter text here', gElCanvas.width / 2, gElCanvas.height / 10)
+
+
+// function drawMeme(imgUrl, textLines) {
+//     console.log('imgUrl:', imgUrl)
+//     const img = new Image()
+//     img.src = `img/gallery/${meme.selectetImgId}.jpg`
+//     img.onload = () => {
+//         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+//         let { txt, size, align, color } = meme.lines[0]
+//         drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
+
+
+//     }
+// }
+
+function drawText(txt, x, y, align, color, size) {
     gCtx.beginPath()
-    gCtx.textBaseline = 'middle';
-    gCtx.textAlign = 'center';
+    gCtx.textBaseline = 'middle'
+    gCtx.textAlign = `${align}`
     gCtx.lineWidth = 1;
-    gCtx.font = '40px impact';
-    gCtx.fillStyle = 'white';
-    gCtx.fillText(txt, x, y);
-    gCtx.strokeStyle = 'black';
-    gCtx.strokeText(txt, x, y);
+    gCtx.font = `${size}px impact`
+    gCtx.fillStyle = `${color}`
+    gCtx.fillText(txt, x, y)
+    gCtx.strokeStyle = 'black'
+    gCtx.strokeText(txt, x, y)
     gCtx.closePath()
 }
 
-function onSetLineText(text){
+function onSetLineText(text) {
     setLineText(text)
     renderMeme()
 }

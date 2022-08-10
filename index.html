@@ -10,34 +10,42 @@
 </head>
 
 <body onload="initCanvas()">
-    <header>
-        <ul>
-            <li>logo</li>
-            <li>Gallery</li>
-            <li>Memes</li>
-            <li>About</li>
-        </ul>
-    </header>
-    <section class="meme-editor">
-        <div class="canvas-container">
-            <canvas class="canvas" width="450px" height="450px" style="outline:1px solid green"></canvas>
+    <header class="main header main layout">
+        <div class="main header-container flex align-cneter space-between">
+            <div class="logo"> <img src="/img/LOGO.png" alt=""></div>
+            <nav class="main-nav">
+                <ul class="main-nav-list clean-list flex space-between">
+                    <li>logo</li>
+                    <li>Gallery</li>
+                    <li>Memes</li>
+                    <li>About</li>
+                </ul>
+            </nav>
         </div>
-        <aside class="control-box">
-            <input type="text" class="text-input" placeholder="Enter text here.." oninput="onSetLineText(this.value)">
-            <button>move up</button>
-            <button>move down</button>
-            <button>switch</button>
-            <button>add text line</button>
-            <button class="">delete text line</button>
-        </aside>
+    </header>
+
+
+    <main class="main content main-layout">
+        <section class="meme-editor">
+            <div class="canvas-container">
+                <canvas class="canvas" width="450px" height="450px" style="outline:1px solid green"></canvas>
+            </div>
+            <aside class="control-box">
+                <input type="text" class="text-input" placeholder="Enter text here.."
+                    oninput="onSetLineText(this.value)">
+                <button>move up</button>
+                <button>move down</button>
+                <button>switch</button>
+                <button>add text line</button>
+                <button class="">delete text line</button>
+            </aside>
+        </section>
+        <section class="gallery">
+        <!-- create grid -->
+        <img src="img/gallery/1.jpg" alt="" hidden>
 
     </section>
 
-    <main class="gallery">
-
-
-        <!-- create grid -->
-        <img src="img/gallery/1.jpg" alt="" hidden>
     </main>
 
     <script src="js/services/meme.service.js"></script>
