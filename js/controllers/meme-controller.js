@@ -43,6 +43,13 @@ function renderMeme() {
 //     }
 // }
 
+function onOpenMemeEditor() {
+    const elGallery = document.querySelector('.gallery')
+    elGallery.hidden = true
+    const elMemeEditor = document.querySelector('.meme-editor')
+    elMemeEditor.hidden = false
+}
+
 function drawText(txt, x, y, align, color, size) {
     gCtx.beginPath()
     gCtx.textBaseline = 'middle'
