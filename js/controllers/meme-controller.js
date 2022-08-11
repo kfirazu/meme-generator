@@ -16,9 +16,9 @@ function renderMeme() {
     img.src = imgData.url
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        let { txt, size, align, color } = meme.lines[0]
-        drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
-        drawLines()
+        // let { txt, size, align, color } = meme.lines[0] // =line
+        // drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
+        drawLines(gMeme.lines)
     }
 }
 
@@ -44,9 +44,9 @@ function drawText(txt, x, y, align, color, size) {
 }
 
 function drawLines(lines) {
-    const linePos = onSetLinePos(textLinePos)
-    console.log('lineIdx:', linePos)
-    lines.forEach(line => drawText(line.txt, linePos, line.align, line.color, line.size))
+    //  let { txt, size, align, color } = meme.lines[0] // =line
+    //  drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
+    lines.forEach(line => drawText(line.txt ,line.pos.x, line.pos.y, line.align, line.color, line.size))
 }
 
 function onSetLineText(text, event) {
@@ -61,7 +61,7 @@ function onSetLineText(text, event) {
 }
 
 function onAddLine() {
-    gMeme.lines.push({ txt: 'Add text', size: 20, align: 'center', color: 'white' })
+    addLine()
     renderMeme()
 }
 
@@ -89,9 +89,12 @@ function onSwitchLine() {
 function onSetLinePos(lineIdx) {
     console.log('lineIdx:', lineIdx)
     let textLinePos = null
-    if (gMeme.selectedLineIdx === 0) textLinePos === 50
-    else if (gMeme.selectedLineIdx === 1) textLinePos = gElCanvas.height - 50
-    else return textLinePos = gElCanvas.height / 2
+    // if (gMeme.selectedLineIdx === 0) {
+    //     textLinePos === 50
+    // }
+    // else if (gMeme.selectedLineIdx === 1) { textLinePos = gElCanvas.height - 50 }
+    // else textLinePos = gElCanvas.height / 2
+    // return textLinePos
 }
 
 
