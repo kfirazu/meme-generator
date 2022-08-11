@@ -5,6 +5,8 @@ function onInit(){
 }
 
 function renderGallery() {
+    document.querySelector('.meme-container').style.display = 'none'
+    document.querySelector('.img-gallery-container').style.display = 'block'
     const elGallery = document.querySelector('.img-gallery')
     const imgs = getImages()
     const imgsStr = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)

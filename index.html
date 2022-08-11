@@ -25,7 +25,7 @@
 
     <!-- meme-editor -->
     <main class="main content editor-layout">
-        <section class="meme-container" hidden>
+        <section class="meme-container">
             <div class="canvas-container">
                 <canvas class="canvas" width="400px" height="400px" style="outline:1px solid black"></canvas>
             </div>
@@ -36,19 +36,27 @@
                 <div class="add-text-container editor-layout flex flex-col">
                     <input type="text" class="text-input" placeholder="Enter text here.."
                         oninput="onSetLineText(this.value)">
-                        <!-- line-control -->
+                    <!-- line-control -->
                     <div class="line-controller-container flex space-between">
-                        <button onclick="onAddLine(this, event)">add text line</button>
-                        <button onclick="onSwitchLine()">Switch Line</button>
-                        <button onclick="onRemoveLine()">delete</button>
+                        <button class="line-controller-btn" onclick="onAddLine(this, event)"><img src="/img/icons/add.png"
+                                alt=""></button>
+                        <button class="line-controller-btn" onclick="onSwitchLine()"><img
+                                src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                                alt="up-and-down-arrows"></button>
+                        <button class="line-controller-btn" onclick="onRemoveLine()"><img src="/img/icons/trash.png"
+                                alt="trash-can">
+                        </button>
                     </div>
                 </div>
+
                 <!-- text-edit-area -->
                 <div class="text-edit-container editor-layout grid">
                     <button onclick="onMoveUp()">move up</button>
                     <button onclick="onMoveDown()">move down</button>
-                    <button onclick="onIncreaseFontSize()">A+</button>
-                    <button onclick="onDecreaseFontSize()">A-</button>
+                    <button class="text-edit-btn" onclick="onIncreaseFontSize()"><img
+                            src="/img/icons/increase font - icon.png" alt="plus-sign"></button>
+                    <button class="text-edit-btn" onclick="onDecreaseFontSize()"><img
+                            src="/img/icons/decrease font - icon.png" alt="minus-sign"></button>
                     <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
                 </div>
                 <div class="publish-btn-container editor-layout flex space-between">
@@ -59,7 +67,7 @@
         </section>
 
         <!-- gallery -->
-        <section class="img-gallery-container hide">
+        <section class="img-gallery-container">
             <div class="img-gallery grid"></div>
         </section>
     </main>

@@ -1,8 +1,8 @@
 'use strict'
 
 var gCanvas = {
-    width: 500,
-    height: 500
+    width: 400,
+    height: 400
 }
 var gMeme = {
     selectedImgId: 1,
@@ -70,12 +70,12 @@ function addLine() {
     let line = { txt: 'Add text here', size: 30, align: 'left', color: 'white' }
 
     if (gMeme.lines.length === 0) {
-        line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 10 }
+        line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
     }
     else if (gMeme.lines.length === 1) {
-        line.pos = { x: gCanvas.width / 2, y: gCanvas.height - 50 }
+        line.pos = { x: gCanvas.width / 3, y: gCanvas.height - 50 }
     }
-    else line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 2 }
+    else line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 2 }
 
 
     gMeme.lines.push(line)

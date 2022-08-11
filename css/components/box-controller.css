@@ -16,7 +16,7 @@
 }
 
 .line-controller-container button {
-    width: 100px;
+    width: 75px;
     margin-inline-start: 0.5rem;
     margin-inline-end: 0.5rem;
 
@@ -27,8 +27,23 @@
     grid-column-gap: 1rem;
 }
 
+
 .publish-btn-container button {
     width: 120px;
     margin-inline-start: 1rem;
     margin-inline-end: 1rem;
+}
+
+.line-controller-btn img{
+    width: 40%;
+
+}
+
+.line-controller-btn {
+    background-color: grey;
+}
+
+.text-edit-btn {
+    background-color: grey;
+    width: 50px;
 }

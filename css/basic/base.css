@@ -2,14 +2,15 @@
     box-sizing: border-box
 }
 
-html{
-    font-size:1.25rem ;
-    font-family: montserrat-regular;
-}
 
 body{
     margin: 0;
+    font-family: montserrat-regular;
     background-color:var(--clr1);
+    font-size:1.25rem ;
+    min-width: 100%;
+    min-height: 100%
+
 }
 
 img {

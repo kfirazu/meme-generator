@@ -2,6 +2,7 @@
 
 let gElCanvas
 let gCtx
+var gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
@@ -10,6 +11,8 @@ function initCanvas() {
 }
 
 function renderMeme() {
+    document.querySelector('.img-gallery-container').style.display = 'none'
+    document.querySelector('.meme-container').style.display = 'flex'
     const meme = getMeme()
     const img = new Image()
     const imgData = getImgById(meme.selectedImgId)
@@ -61,7 +64,7 @@ function onAddLine() {
     renderMeme()
 }
 
-function onRemoveLine(){
+function onRemoveLine() {
     removeLine()
     renderMeme()
 }
@@ -84,6 +87,24 @@ function onDecreaseFontSize() {
 function onSwitchLine() {
     switchLine()
     renderMeme()
+}
+
+function addListeners() {
+    addMouseListeners()
+    addTouchListeners()
+}
+
+function addMouseListeners() {
+    gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mousedown', onDown)
+    gElCanvas.addEventListener('mouseup', onUp)
+}
+
+
+function addTouchListeners() {
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchstart', onDown)
+    gElCanvas.addEventListener('touchend', onUp)
 }
 
 

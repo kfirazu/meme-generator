@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     margin-inline-start: 1rem;
     margin-inline-end: 1rem;
+    background-color: var(--clr4);
 }
 
 canvas {
