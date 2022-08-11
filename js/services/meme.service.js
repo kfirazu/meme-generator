@@ -82,6 +82,13 @@ function addLine() {
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
+function removeLine(){
+    let isSure = confirm('Are you sure?')
+    if(isSure){
+    gMeme.lines.splice(gMeme.selectedLineIdx,1)
+    }
+}
+
 
 
 

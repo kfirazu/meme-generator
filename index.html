@@ -8,51 +8,56 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Meme-Generator</title>
 </head>
+<!-- header -->
 
 <body onload="onInit()">
-    <header class="main header main layout">
-        <div class="main header-container flex align-cneter space-between">
-            <div class="logo"> <img src="img/logo.png" alt="logo-image"></div>
+    <header class="main-header main layout">
+        <div class="main-header-container flex align-cneter space-between">
+            <div class="logo"> <img src="img/logo2.png" alt="logo-image"></div>
             <nav class="main-nav flex">
                 <ul class="main-nav-list clean-list flex space-between">
-                    <li>logo</li>
-                    <li>Gallery</li>
-                    <li>Memes</li>
-                    <li>About</li>
+                    <li><a class="flex align-center justify-center" href="#">Gallery</a></li>
+                    <li><a class="flex align-center justify-center" href="#">Meme</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
+    <!-- meme-editor -->
     <main class="main content main-layout">
-        <section class="meme-editor" hidden>
-            <div class="canvas-container">
+        <section class="meme-container main-layout" hidden>
+            <div class="canvas-container grid">
                 <canvas class="canvas" width="500px" height="500px" style="outline:1px solid green"></canvas>
-            </div>
-            <aside class="control-box">
-                <input type="text" class="text-input" placeholder="Enter text here.." oninput="onSetLineText(this.value)">
-                <button onclick="onMoveUp()">move up</button>
-                <button onclick="onMoveDown()">move down</button>
-                <button onclick="onSwitchLine()">Switch Line</button>
-                <button onclick="onIncreaseFontSize()">A+</button>
-                <button onclick="onDecreaseFontSize()">A-</button>
-                <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)"/>
-                <button onclick="onAddLine(this, event)">add text line</button>
-                <button>delete text line</button>
-            </aside>
-        </section>
-        <section class="gallery flex justify-center">
-            <div class="main-layout flex justify-center"></div>
 
-            <!-- create grid -->
-            <!-- <img src="img/gallery/1.jpg" alt="" hidden> -->
+
+                <!-- control-box -->
+                <aside class="control-box grid">
+                    <input type="text" class="text-input" placeholder="Enter text here.."
+                        oninput="onSetLineText(this.value)">
+                    <button onclick="onAddLine(this, event)">add text line</button>
+                    <button onclick="onSwitchLine()">Switch Line</button>
+                    <button onclick="onRemoveLine()">delete</button>
+                    <!-- <button onclick="onMoveUp()">move up</button> -->
+                    <!-- <button onclick="onMoveDown()">move down</button> -->
+                    <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
+                    <button onclick="onIncreaseFontSize()">A+</button>
+                    <button onclick="onDecreaseFontSize()">A-</button>
+                </aside>
+            </div>
+        </section>
+
+        <!-- gallery -->
+        <section class="img-gallery-container">
+            <div class="img-gallery grid"></div>
         </section>
     </main>
+
+    <!-- footer -->
     <footer class="main-footer-container flex">
-        <div class="main-footer flex align-cneter justify-center"></div>
-        <div class="logo"> <img src="img/logo.png" alt=""></div>
-        <small>Made By Kfir Azulay</small>
+        <div class="main-footer flex align-cneter justify-center">
+            <div class="logo"> <img src="img/logo2.jpg" alt=""></div>
+            <small>Made By Kfir Azulay</small>
+        </div>
     </footer>
 
 

@@ -22,9 +22,9 @@ function renderMeme() {
 
 
 function onOpenMemeEditor() {
-    const elGallery = document.querySelector('.gallery')
+    const elGallery = document.querySelector('.img-gallery-container ')
     elGallery.hidden = true
-    const elMemeEditor = document.querySelector('.meme-editor')
+    const elMemeEditor = document.querySelector('.meme-container')
     elMemeEditor.hidden = false
 }
 
@@ -61,6 +61,11 @@ function onAddLine() {
     renderMeme()
 }
 
+function onRemoveLine(){
+    removeLine()
+    renderMeme()
+}
+
 function onSetTextColor(color) {
     setTextColor(color)
     renderMeme()
@@ -82,16 +87,6 @@ function onSwitchLine() {
 }
 
 
-function onSetLinePos(lineIdx) {
-    console.log('lineIdx:', lineIdx)
-    let textLinePos = null
-    // if (gMeme.selectedLineIdx === 0) {
-    //     textLinePos === 50
-    // }
-    // else if (gMeme.selectedLineIdx === 1) { textLinePos = gElCanvas.height - 50 }
-    // else textLinePos = gElCanvas.height / 2
-    // return textLinePos
-}
 
 
 

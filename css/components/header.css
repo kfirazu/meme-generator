@@ -5,5 +5,25 @@
 
 .logo img{
     width: 20px;
+    z-index: 1;
+
 }
+
+.main-nav-list li a {
+    border: none;
+    color: var(--clr1);
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    
+}
+
+.main-header-container {
+    background-color:red;
+    height: 100px;
+}
+
+
+
+
 

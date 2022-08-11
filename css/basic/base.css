@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box
+}
+
+html{
+    font-size:1.25rem ;
+    font-family: montserrat-regular;
+}
+
+body{
+    margin: 0;
+    background-color:var(--clr1)
+}
+
+img {
+    width: 100%;
+    border-radius: 0.85rem;
+}
+
+.btn {
+    cursor: pointer;
+}
+

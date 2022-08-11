@@ -1,18 +1,16 @@
-body{
-    margin: 0;
-    background-color: rgb(220, 220, 220);
-}
+
 @import "setup/vars.css";
 @import "setup/typography.css";
 
 
 @import "basic/helpers.css";
-@import "basic/base.css/";
+@import "basic/base.css";
 @import "basic/layout.css";
 
 
 @import "components/header.css";
-@import "components/editor.css";
+@import "components/meme-container.css";
+@import "components/box-controller";
 @import "components/gallery.css";
 @import "components/footer.css";
 
