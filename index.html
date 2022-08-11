@@ -37,7 +37,7 @@
                 <button onclick="onSwitchLine()">Switch Line</button>
                 <button onclick="onIncreaseFontSize()">A+</button>
                 <button onclick="onDecreaseFontSize()">A-</button>
-                <input type="color" class="txt-color" name="color-picker" onchange="onSetTextColor(this.value)"/>
+                <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)"/>
                 <button onclick="onAddLine(this, event)">add text line</button>
                 <button>delete text line</button>
             </aside>

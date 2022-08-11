@@ -30,6 +30,9 @@ function setImg(imgId) {
 }
 
 function setLineText(txt) {
+    if(gMeme.lines.length === 0){ 
+        addLine()
+    }
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
@@ -64,7 +67,7 @@ function switchLine() {
 }
 
 function addLine() {
-    let line = { txt: '', size: 30, align: 'center', color: 'white' }
+    let line = { txt: 'Add text here', size: 30, align: 'left', color: 'white' }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 10 }

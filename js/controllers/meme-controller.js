@@ -61,14 +61,14 @@ function onAddLine() {
     renderMeme()
 }
 
-function onSetTextColor() {
-    setTextColor()
+function onSetTextColor(color) {
+    setTextColor(color)
     renderMeme()
 }
 
 function onIncreaseFontSize() {
     increaseFontSize()
-    renderMeme
+    renderMeme()
 }
 
 function onDecreaseFontSize() {
