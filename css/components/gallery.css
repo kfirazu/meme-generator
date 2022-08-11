@@ -1,0 +1,10 @@
+.gallery .main-layout{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery img {
+    max-width: 140px;
+    object-fit: cover;
+}

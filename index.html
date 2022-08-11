@@ -9,7 +9,7 @@
     <title>Meme-Generator</title>
 </head>
 
-<body onload="initCanvas()">
+<body onload="onInit()">
     <header class="main header main layout">
         <div class="main header-container flex align-cneter space-between">
             <div class="logo"> <img src="img/logo.png" alt="logo-image"></div>
@@ -26,39 +26,43 @@
 
 
     <main class="main content main-layout">
-        <section class="meme-editor" >
+        <section class="meme-editor" hidden>
             <div class="canvas-container">
                 <canvas class="canvas" width="450px" height="450px" style="outline:1px solid green"></canvas>
             </div>
             <aside class="control-box">
                 <input type="text" class="text-input" placeholder="Enter text here.." oninput="onSetLineText(this.value)">
-                <button>move up</button>
-                <button>move down</button>
-                <button>switch</button>
+                <button onclick="onMoveUp()">move up</button>
+                <button onclick="onMoveDown()">move down</button>
+                <button onclick="onSwitchLine()">Switch Line</button>
                 <button onclick="onIncreaseFontSize()">A+</button>
                 <button onclick="onDecreaseFontSize()">A-</button>
                 <input type="color" class="txt-color" name="color-picker" onchange="onSetTextColor(this.value)"/>
                 <button onclick="onAddLine(this, event)">add text line</button>
-                <button class="">delete text line</button>
+                <button>delete text line</button>
             </aside>
         </section>
-        <section class="gallery">
-            <!-- create grid -->
-            <!-- <img src="img/gallery/1.jpg" alt="logo-" hidden> -->
+        <section class="gallery flex justify-center">
+            <div class="main-layout flex justify-center"></div>
 
+            <!-- create grid -->
+            <!-- <img src="img/gallery/1.jpg" alt="" hidden> -->
         </section>
     </main>
+    <footer class="main-footer-container flex">
+        <div class="main-footer flex align-cneter justify-center"></div>
+        <div class="logo"> <img src="img/logo.png" alt=""></div>
+        <small>Made By Kfir Azulay</small>
+    </footer>
 
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
     <script src="js/controllers/meme-controller.js"></script>
     <script src="js/controllers/gallery-controller.js"></script>
 </body>
 
-<footer class="main-footer-container flex">
-    <div class="main-footer flex align-cneter justify-center"></div>
-    <div class="logo"> <img src="img/logo.png" alt=""></div>
-    <small>Made By Kfir Azulay</small>
-</footer>
 
 </html>

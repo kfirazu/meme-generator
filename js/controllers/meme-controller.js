@@ -18,6 +18,7 @@ function renderMeme() {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         let { txt, size, align, color } = meme.lines[0]
         drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
+        drawLines()
     }
 }
 
@@ -42,36 +43,55 @@ function drawText(txt, x, y, align, color, size) {
     gCtx.closePath()
 }
 
+function drawLines(lines) {
+    const linePos = onSetLinePos(textLinePos)
+    console.log('lineIdx:', linePos)
+    lines.forEach(line => drawText(line.txt, linePos, line.align, line.color, line.size))
+}
+
 function onSetLineText(text, event) {
     const elText = document.querySelector('.text-input');
-    elText.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-            console.log('Enter key pressed')
-        }
-    });
+    // elText.addEventListener("keyup", (event) => {
+    //     if (event.key === "Enter") {
+    //         console.log('Enter key pressed')
+    //     }
+    // });
     setLineText(text)
     renderMeme()
 }
 
 function onAddLine() {
     gMeme.lines.push({ txt: 'Add text', size: 20, align: 'center', color: 'white' })
-    console.log('txt:', txt)
     renderMeme()
 }
 
-function onSetTextColor(){
-    setTextColor(color)
+function onSetTextColor() {
+    setTextColor()
     renderMeme()
 }
 
-function onIncreaseFontSize(){
-    increaseFontSize(size)
+function onIncreaseFontSize() {
+    increaseFontSize()
     renderMeme
 }
 
-function onDecreaseFontSize(){
-    decreaseFontSize(size)
+function onDecreaseFontSize() {
+    decreaseFontSize()
     renderMeme()
+}
+
+function onSwitchLine() {
+    switchLine()
+    renderMeme()
+}
+
+
+function onSetLinePos(lineIdx) {
+    console.log('lineIdx:', lineIdx)
+    let textLinePos = null
+    if (gMeme.selectedLineIdx === 0) textLinePos === 50
+    else if (gMeme.selectedLineIdx === 1) textLinePos = gElCanvas.height - 50
+    else return textLinePos = gElCanvas.height / 2
 }
 
 

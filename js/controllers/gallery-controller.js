@@ -7,21 +7,18 @@ function onInit(){
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
     const imgs = getImages()
-    const imgsStr = imgs.map(img => `<img src="${img.url} onclick="onImgSelect('${img.id}')" />`)
+    const imgsStr = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)
     elGallery.innerHTML = imgsStr.join('')
 }
 
-function onImgSelect() {
-    setImg()
+function onImgSelect(imgId) {
+    setImg(imgId)
     onOpenMemeEditor()
-    // initCanvas()
+    initCanvas()
     renderMeme()
 
 }
 
-function getImages() {
-    return gImgs
-}
 
 
 
