@@ -16,8 +16,6 @@ function renderMeme() {
     img.src = imgData.url
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        // let { txt, size, align, color } = meme.lines[0] // =line
-        // drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
         drawLines(gMeme.lines)
     }
 }
@@ -44,9 +42,7 @@ function drawText(txt, x, y, align, color, size) {
 }
 
 function drawLines(lines) {
-    //  let { txt, size, align, color } = meme.lines[0] // =line
-    //  drawText(txt, gElCanvas.width / 2, gElCanvas.height / 10, align, color, size)
-    lines.forEach(line => drawText(line.txt ,line.pos.x, line.pos.y, line.align, line.color, line.size))
+    lines.forEach(line => drawText(line.txt, line.pos.x, line.pos.y, line.align, line.color, line.size))
 }
 
 function onSetLineText(text, event) {
