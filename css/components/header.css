@@ -1,22 +1,30 @@
-.logo{
-    width: rem;
+.logo img{
     padding: 10px;
+    margin-inline-start: 3.5rem;
 }
 
-/* .logo img{
-    width: 20px;
-    z-index: 1;
-
-} */
+.main-header .main-header-container {
+    align-items: center;
+}
 
 .main-nav-list li a {
     border: none;
     color: var(--clr1);
     text-decoration: none;
-    font-size: 1em;
+    font-size: 1.2em;
     display: flex;
-    
+    height: 70px;
+    width: 65px;
+    margin-inline-end: 3rem;
+
 }
+
+.main-nav-list li a:hover {
+    color: var(--clr5);
+    /* box-shadow: inset -1px 0 0 var(--clr5), inset 0 -6px 0 var(--clr5); */
+    box-shadow: inset 0px 0 0 #1d1d1d, inset 0 -6px 0 #040a2c;
+}
+
 
 .main-header-container {
     background-color:var(--clr2);
