@@ -1,4 +1,23 @@
-.main-footer {
-    height: 500px;
-    background-color: red;
+.main-footer-container {
+    height: 210px;
+    background-color: var(--clr2);
+    justify-content: center
+}
+
+.main-footer-container .footer-logo {
+    color: var(--clr1);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: Montserrat-bold;
+
+}
+
+.main-footer-container small {
+    font-size: 0.955em;
+    color: var(--clr1);
+    font-family: Montserrat-thin;
+}
+
+.main-footer-container .main-footer {
+    align-items: center;
 }
