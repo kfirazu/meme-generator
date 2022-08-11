@@ -9,8 +9,8 @@
 
 
 @import "components/header.css";
-@import "components/meme-container.css";
-@import "components/box-controller";
+@import "components/meme-editor.css";
+@import "components/box-controller.css";
 @import "components/gallery.css";
 @import "components/footer.css";
 

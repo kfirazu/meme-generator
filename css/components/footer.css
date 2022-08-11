@@ -1,7 +1,7 @@
 .main-footer-container {
     height: 210px;
     background-color: var(--clr2);
-    justify-content: center
+    justify-content: center;
 }
 
 .main-footer-container .footer-logo {

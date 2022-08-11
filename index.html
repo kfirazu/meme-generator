@@ -24,30 +24,42 @@
     </header>
 
     <!-- meme-editor -->
-    <main class="main content main-layout">
-        <section class="meme-container main-layout" hidden>
-            <div class="canvas-container grid">
-                <canvas class="canvas" width="500px" height="500px" style="outline:1px solid green"></canvas>
+    <main class="main content editor-layout">
+        <section class="meme-container" hidden>
+            <div class="canvas-container">
+                <canvas class="canvas" width="400px" height="400px" style="outline:1px solid black"></canvas>
+            </div>
 
 
-                <!-- control-box -->
-                <aside class="control-box grid">
+            <!-- control-box -->
+            <aside class="control-box flex flex-col space-between">
+                <div class="add-text-container editor-layout flex flex-col">
                     <input type="text" class="text-input" placeholder="Enter text here.."
                         oninput="onSetLineText(this.value)">
-                    <button onclick="onAddLine(this, event)">add text line</button>
-                    <button onclick="onSwitchLine()">Switch Line</button>
-                    <button onclick="onRemoveLine()">delete</button>
-                    <!-- <button onclick="onMoveUp()">move up</button> -->
-                    <!-- <button onclick="onMoveDown()">move down</button> -->
-                    <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
+                        <!-- line-control -->
+                    <div class="line-controller-container flex space-between">
+                        <button onclick="onAddLine(this, event)">add text line</button>
+                        <button onclick="onSwitchLine()">Switch Line</button>
+                        <button onclick="onRemoveLine()">delete</button>
+                    </div>
+                </div>
+                <!-- text-edit-area -->
+                <div class="text-edit-container editor-layout grid">
+                    <button onclick="onMoveUp()">move up</button>
+                    <button onclick="onMoveDown()">move down</button>
                     <button onclick="onIncreaseFontSize()">A+</button>
                     <button onclick="onDecreaseFontSize()">A-</button>
-                </aside>
-            </div>
+                    <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
+                </div>
+                <div class="publish-btn-container editor-layout flex space-between">
+                    <button class="share-btn">Share</button>
+                    <button class="download-btn">Download</button>
+                </div>
+            </aside>
         </section>
 
         <!-- gallery -->
-        <section class="img-gallery-container">
+        <section class="img-gallery-container hide">
             <div class="img-gallery grid"></div>
         </section>
     </main>
@@ -57,7 +69,7 @@
         <div class="main-footer flex flex-col align-cneter justify-center">
             <div class="footer-logo"> <img src="img/logo.png" alt="logo-image"></div>
             <small>Made By Kfir Azulay</small>
-            
+
         </div>
     </footer>
 

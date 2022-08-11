@@ -1,0 +1,15 @@
+
+
+.meme-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+}
+
+canvas {
+    margin: 1rem;
+}
+
+
+
