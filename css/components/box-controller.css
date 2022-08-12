@@ -49,3 +49,24 @@
     width: 50px;
     height: 50px;
 }
+
+.publish-btn-container a{
+    text-decoration: none;
+    color: var(--clr5);
+}
+
+.facebook-icon {
+    width: 100%;
+    margin-right: 1em;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+
+.share-container a.btn{
+    width: 42px;
+    background-color: #516fad;;
+
+
+}
+

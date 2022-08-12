@@ -7,6 +7,7 @@ var gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
+
     renderMeme()
 }
 
@@ -61,6 +62,7 @@ function onSetLineText(text, event) {
 
 function onAddLine() {
     addLine()
+    document.querySelector('.text-input').value = ''
     renderMeme()
 }
 
@@ -123,10 +125,9 @@ function drawRect(linePos) {
     gCtx.closePath();
 }
 
-function downloadCanvas(elLink) {
+function onDownloadMeme(elLink) {
     const data = gElCanvas.toDataURL();
-    elLink.href = data
-    elLink.download = 'my-meme'
+    elLink.href = data;
 }
 
 function setLineFocus(){

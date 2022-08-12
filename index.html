@@ -34,8 +34,8 @@
             <!-- control-box -->
             <aside class="control-box flex flex-col space-between">
                 <div class="add-text-container editor-layout flex flex-col">
-                    <input type="text" class="text-input" placeholder="Enter text here.."
-                        oninput="onSetLineText(this.value)">
+                    <input type="text" class="text-input" value=""
+                        oninput="onSetLineText(this.value) ">
                     <!-- line-control -->
                     <div class="line-controller-container flex space-between">
                         <button class="line-controller-btn" onclick="onAddLine(this, event)"><img src="/img/icons/add.png"
@@ -51,17 +51,21 @@
 
                 <!-- text-edit-area -->
                 <div class="text-edit-container editor-layout grid">
-                    <button onclick="onMoveUp()">move up</button>
-                    <button onclick="onMoveDown()">move down</button>
                     <button class="text-edit-btn" onclick="onIncreaseFontSize()"><img
-                            src="/img/icons/increase font - icon.png" alt="plus-sign"></button>
-                    <button class="text-edit-btn" onclick="onDecreaseFontSize()"><img
+                        src="/img/icons/increase font - icon.png" alt="plus-sign"></button>
+                        <button class="text-edit-btn" onclick="onDecreaseFontSize()"><img
                             src="/img/icons/decrease font - icon.png" alt="minus-sign"></button>
+                            <button class="text-edit-btn" onclick="onSetTextAlign('left')"><img src="/img/icons/align-to-left.png" alt=""></button>
+                            <button class="text-edit-btn" onclick="onSetTextAlign('center')"><img src="/img/icons/center-text-alignment.png" alt=""></button>
+                            <button class="text-edit-btn" onclick="onSetTextAlign('right')"><img src="/img/icons/align-to-right.png" alt=""></button>
+                            <button class="text-edit-btn" onclick="onMoveUp()">move up</button>
+                            <button class="text-edit-btn" onclick="onMoveDown()">move down</button>
                     <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
                 </div>
-                <div class="publish-btn-container editor-layout flex space-between">
-                    <button class="share-btn">Share</button>
-                    <button class="download-btn">Download</button>
+                <div class="publish-btn-container editor-layout flex space-between align-center">
+                    <button class="share-btn" onclick="uploadImg()">Share</button>
+                    <div class="share-container flex space-between flex-col"></div>
+                    <button class="download-btn"><a href="" onclick="onDownloadMeme(this)" download="download">Download</a></button>
                 </div>
             </aside>
         </section>

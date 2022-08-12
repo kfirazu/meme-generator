@@ -68,7 +68,7 @@ function switchLine() {
 }
 
 function addLine() {
-    let line = { txt: 'Add text here', size: 30, align: 'left', color: 'white' }
+    let line = { txt: '', size: 30, align: 'left', color: 'white' }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
@@ -90,23 +90,56 @@ function removeLine() {
     }
 }
 
-function setTextAlign() {
-    let align = gMeme.lines[gMeme.selectedLineIdx].align
+function setTextAlign(align) {
     console.log('align:', align)
+    gMeme.lines[gMeme.selectedLineIdx].align = align
     if (align === 'left') {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 6
     } else if (align === 'right') {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width - 40
 
     } else if (align === 'center') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 3
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 2
     }
 }
 
-function getSelectedLine(selectedLineIdx){
+// function getSelectedLine(selectedLineIdx){
+// }
+
+function uploadImg(){
+    const imgDataUrl = gElCanvas.toDataURL("image/jpeg")
+
+    function onSuccess(uploadedImgUrl){
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+
+        document.querySelector('.share-container').innerHTML = `
+        <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
+        <img src="img/icons/facebook-logo.png" alt="facebook" class="facebook-icon">
+        </a>`
+    }
+    doUploadImg(imgDataUrl, onSuccess);
+    
 }
 
 
+function doUploadImg(imgDataUrl, onSuccess) {
+
+    const formData = new FormData();
+    formData.append('img', imgDataUrl)
+
+    fetch('//ca-upload.com/here/upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.text())
+        .then((url) => {
+            console.log('Got back live url:', url);
+            onSuccess(url)
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+}
 
 
 
