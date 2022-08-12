@@ -24,12 +24,12 @@ function renderMeme() {
 }
 
 
-function onOpenMemeEditor() {
-    const elGallery = document.querySelector('.img-gallery-container ')
-    elGallery.hidden = true
-    const elMemeEditor = document.querySelector('.meme-container')
-    elMemeEditor.hidden = false
-}
+// function onOpenMemeEditor() {
+//     const elGallery = document.querySelector('.img-gallery-container ')
+//     elGallery.hidden = true
+//     const elMemeEditor = document.querySelector('.meme-container')
+//     elMemeEditor.hidden = false
+// }
 
 function drawText(txt, x, y, align, color, size) {
     gCtx.beginPath()
@@ -86,6 +86,7 @@ function onDecreaseFontSize() {
 
 function onSwitchLine() {
     switchLine()
+    setLineFocus()
     renderMeme()
 }
 
@@ -106,6 +107,33 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown)
     gElCanvas.addEventListener('touchend', onUp)
 }
+
+function onSetTextAlign(align) {
+    setTextAlign(align)
+    renderMeme()
+}
+
+function drawRect(linePos) {
+    // let LinePos = 
+
+    gCtx.beginPath();
+    gCtx.lineWidth = 4;
+    gCtx.strokeStyle = 'green';
+    gCtx.strokRect();
+    gCtx.closePath();
+}
+
+function downloadCanvas(elLink) {
+    const data = gElCanvas.toDataURL();
+    elLink.href = data
+    elLink.download = 'my-meme'
+}
+
+function setLineFocus(){
+    let focus = document.querySelector('.text-input').focus
+    
+}
+
 
 
 

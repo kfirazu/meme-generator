@@ -15,7 +15,7 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
-    onOpenMemeEditor()
+    // onOpenMemeEditor()
     initCanvas()
     renderMeme()
 

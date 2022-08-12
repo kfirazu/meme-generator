@@ -3,9 +3,9 @@
 .meme-container{
     display: flex;
     justify-content: space-evenly;
-    margin-inline-start: 1rem;
-    margin-inline-end: 1rem;
+   
     background-color: var(--clr4);
+    width: 100%;
 }
 
 canvas {
