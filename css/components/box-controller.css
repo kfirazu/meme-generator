@@ -1,6 +1,10 @@
 .control-box {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(227, 204, 176, 0.521);
+
 }
 
 .add-text-container {
@@ -8,11 +12,14 @@
 }
 
 .add-text-container .text-input {
-    height: 45px; 
+    height: 45px;
     border-radius: 1rem;
     text-align: center;
     margin-bottom: 20px;
     font-size: 1rem;
+    margin-top: 10px;
+    width: 90%;
+    margin-inline-start: 2.5%;
 }
 
 .line-controller-container button {
@@ -25,7 +32,9 @@
 .text-edit-container {
     grid-template-columns: repeat(5, 45px);
     grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
     justify-content: center;
+    margin-top: 5%;
 }
 
 
@@ -44,14 +53,15 @@
 }
 
 .line-controller-btn {
-    background-color: grey;
+    background-color: rgb(160, 149, 136)
 }
 
 .text-edit-btn {
-    background-color: grey;
     width: 50px;
     height: 50px;
+    background-color:  rgb(160, 149, 136);
 }
+
 
 .publish-btn-container a{
     text-decoration: none;
