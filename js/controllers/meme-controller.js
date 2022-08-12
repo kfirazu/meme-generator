@@ -13,6 +13,7 @@ function initCanvas() {
 
 function renderMeme() {
     document.querySelector('.img-gallery-container').style.display = 'none'
+    // document.querySelector('.meme-container').style.display = 'grid'
     document.querySelector('.meme-container').style.display = 'flex'
     const meme = getMeme()
     const img = new Image()

@@ -1,0 +1,35 @@
+@media (max-width: 860px) {
+    .meme-container {
+        display: flex;
+        flex-direction: column;
+        margin-inline-start: 1rem;
+        align-items: flex-start;
+    }
+}
+
+/* small */
+@media(min-width: 640px) {
+    .main-layout {
+        max-width: var(--small);
+    }
+
+    .meme-container {
+        display: flex;
+      
+
+    }
+
+    /* medium */
+    @media (min-width: 860px) {
+        .main-layout {
+            max-width: var(--medium);
+        }
+    }
+
+    /* large */
+
+    @media (min-width: 1040px) {
+        .main-layout {
+            max-width: var(--large);
+        }
+    }

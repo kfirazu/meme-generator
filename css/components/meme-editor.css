@@ -1,5 +1,23 @@
 
 
+/* .meme-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-column-gap: 2rem;
+    align-items: center;
+    justify-items: end;
+    min-height:70vh;
+    background-color: var(--clr4);
+    width: 100vw;
+    margin: 0 auto
+} */
+
+canvas {
+    margin: 1rem;
+    border-radius: 15px;
+        
+}
+
 .meme-container{
     display: flex;
     justify-content: space-evenly;
@@ -7,11 +25,7 @@
     min-height:70vh;
     background-color: var(--clr4);
     width: 100%;
-}
-
-canvas {
-    margin: 1rem;
-    border-radius: 15px;
+    min-width: 100%;
 }
 
 
