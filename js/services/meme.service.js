@@ -64,6 +64,7 @@ function switchLine() {
     gMeme.selectedLineIdx++
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
 
+
 }
 
 function addLine() {
@@ -101,6 +102,10 @@ function setTextAlign() {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 3
     }
 }
+
+function getSelectedLine(selectedLineIdx){
+}
+
 
 
 
