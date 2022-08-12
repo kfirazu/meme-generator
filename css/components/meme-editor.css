@@ -3,7 +3,8 @@
 .meme-container{
     display: flex;
     justify-content: space-evenly;
-   
+    align-items: center;
+    /* min-height:70vh; */
     background-color: var(--clr4);
     width: 100%;
 }

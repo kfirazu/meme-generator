@@ -62,13 +62,21 @@ function decreaseFontSize() {
 
 function switchLine() {
     gMeme.selectedLineIdx++
-    if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
-
+    if (gMeme.selectedLineIdx > gMeme.lines.length) gMeme.selectedLineIdx = 0
 
 }
 
+// function moveUp(){
+//     gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+// }
+
+// function moveDown(){
+//     gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+
+// }
+
 function addLine() {
-    let line = { txt: '', size: 30, align: 'left', color: 'white' }
+    let line = { txt: ' ', size: 30, align: 'left', color: 'white' }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
@@ -103,13 +111,20 @@ function setTextAlign(align) {
     }
 }
 
-// function getSelectedLine(selectedLineIdx){
+function renderInputValue() {
+    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
+    let elInput = document.querySelector('.text-input')
+    elInput.value = inputText
+}
+
+// function getSelectedLine(selectedLine){
+//     const selectedLine = gMeme.selectedLineIdx
 // }
 
-function uploadImg(){
+function uploadImg() {
     const imgDataUrl = gElCanvas.toDataURL("image/jpeg")
 
-    function onSuccess(uploadedImgUrl){
+    function onSuccess(uploadedImgUrl) {
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
 
         document.querySelector('.share-container').innerHTML = `
@@ -118,7 +133,7 @@ function uploadImg(){
         </a>`
     }
     doUploadImg(imgDataUrl, onSuccess);
-    
+
 }
 
 
@@ -128,9 +143,9 @@ function doUploadImg(imgDataUrl, onSuccess) {
     formData.append('img', imgDataUrl)
 
     fetch('//ca-upload.com/here/upload.php', {
-            method: 'POST',
-            body: formData
-        })
+        method: 'POST',
+        body: formData
+    })
         .then(res => res.text())
         .then((url) => {
             console.log('Got back live url:', url);

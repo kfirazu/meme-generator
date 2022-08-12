@@ -24,14 +24,6 @@ function renderMeme() {
     }
 }
 
-
-// function onOpenMemeEditor() {
-//     const elGallery = document.querySelector('.img-gallery-container ')
-//     elGallery.hidden = true
-//     const elMemeEditor = document.querySelector('.meme-container')
-//     elMemeEditor.hidden = false
-// }
-
 function drawText(txt, x, y, align, color, size) {
     gCtx.beginPath()
     gCtx.textBaseline = 'middle'
@@ -88,9 +80,19 @@ function onDecreaseFontSize() {
 
 function onSwitchLine() {
     switchLine()
+    renderInputValue()
     setLineFocus()
-    renderMeme()
+    // renderMeme()
 }
+
+// function onMoveUp() {
+//     MoveUp()
+//     renderMeme()
+// }
+
+// function onMoveDown()
+//     moveDown()
+//     renderMeme()
 
 function addListeners() {
     addMouseListeners()
@@ -115,13 +117,11 @@ function onSetTextAlign(align) {
     renderMeme()
 }
 
-function drawRect(linePos) {
-    // let LinePos = 
-
+function drawRect(x, y, width, height) {
     gCtx.beginPath();
-    gCtx.lineWidth = 4;
-    gCtx.strokeStyle = 'green';
-    gCtx.strokRect();
+    gCtx.lineWidth = 5;
+    gCtx.strokeStyle = 'black';
+    gCtx.strokeRect(x, y, width, height);
     gCtx.closePath();
 }
 
@@ -130,9 +130,13 @@ function onDownloadMeme(elLink) {
     elLink.href = data;
 }
 
-function setLineFocus(){
-    let focus = document.querySelector('.text-input').focus
-    
+function setLineFocus() {
+    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    console.log('selectedLine:', selectedLine)
+    const selectedLineLength = gCtx.measureText(`${selectedLine.txt}`)
+    const selectedLineHeight = gMeme.lines.size
+    drawRect(gCanvas.width / 3, gCanvas.height / 10, selectedLineLength, selectedLineHeight)
+
 }
 
 
