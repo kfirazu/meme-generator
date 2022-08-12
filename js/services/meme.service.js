@@ -30,7 +30,7 @@ function setImg(imgId) {
 }
 
 function setLineText(txt) {
-    if(gMeme.lines.length === 0){ 
+    if (gMeme.lines.length === 0) {
         addLine()
     }
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
@@ -82,12 +82,27 @@ function addLine() {
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
-function removeLine(){
+function removeLine() {
     let isSure = confirm('Are you sure?')
-    if(isSure){
-    gMeme.lines.splice(gMeme.selectedLineIdx,1)
+    if (isSure) {
+        gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     }
 }
+
+function setTextAlign() {
+    let align = gMeme.lines[gMeme.selectedLineIdx].align
+    console.log('align:', align)
+    if (align === 'left') {
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 6
+    } else if (align === 'right') {
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width - 40
+
+    } else if (align === 'center') {
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 3
+    }
+}
+
+
 
 
 
