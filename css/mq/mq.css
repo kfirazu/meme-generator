@@ -1,5 +1,5 @@
 @media (max-width: 860px) {
-    
+
 
     .meme-container {
         display: flex;
@@ -73,18 +73,19 @@
 
     }
 
-    .line-controller-container button{
+    .line-controller-container button {
         font-size: 1.5rem;
     }
 
-    .line-controller-btn img{
+    .line-controller-btn img {
         width: 80%;
     }
 
-    .text-edit-container{
+    .text-edit-container {
         margin-top: 0;
 
     }
+
     .text-edit-container .text-edit-btn {
         width: 95%;
     }
@@ -107,6 +108,7 @@
     .main-layout>*:not(.full) {
         max-width: var(--small);
     }
+
     canvas {
         width: 400px;
     }
@@ -114,11 +116,30 @@
     .control-box {
         width: 400px;
         height: 400px;
-        border: 2px solid black;
+        /* border: 2px solid black; */
         border-radius: 15px;
-        background-color: rgba(227, 204, 176, 0.521);
+        background-color: rgba(222, 213, 202, 0.708);
         margin: 1rem;
     }
+
+    .line-controller-container button {
+        font-size: 1.5rem;
+    }
+
+    .line-controller-btn img {
+        width: 60%;
+    }
+
+    .text-edit-container {
+        margin-top: 1.5rem;
+    }
+
+
+    .text-edit-container .text-edit-btn {
+        width: 100%;
+        padding: 5px;
+    }
+
 
 }
 

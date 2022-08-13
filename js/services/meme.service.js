@@ -15,8 +15,8 @@ var gQuotes = [
     'Hello world',
     'Coding Academy',
     'Fullstack',
-    'So many books, so little time',
-    'Function "init" is not defined',
+    'So many books ',
+    'so little time',
     'Sprint 2',
     'Code review',
     'אשמח לעזרה',
@@ -32,14 +32,6 @@ function setImg(imgId) {
     gMeme.selectedImgId = imgId
 }
 
-function setLineText(txt) {
-    if (gMeme.lines.length === 0) {
-        addLine()
-    }
-    gMeme.lines[gMeme.selectedLineIdx].txt = txt
-}
-
-
 function getMeme() {
     return gMeme
 }
@@ -48,6 +40,12 @@ function getImages() {
     return gImgs
 }
 
+function setLineText(txt) {
+    if (gMeme.lines.length === 0) {
+        addLine()
+    }
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
 
 function setTextColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
@@ -69,10 +67,26 @@ function switchLine() {
 
 }
 
-// function isLineClicked(clickedPos){
-//     const meme = getMeme()
+function removeLine() {
+    let isSure = confirm('Are you sure?')
+    if (isSure) {
+        gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    }
+}
 
-// }
+function MoveLineUp() {
+    if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
+    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+    console.log(':move up', gMeme.lines[gMeme.selectedLineIdx].pos.y)
+
+}
+
+function moveLineDown() {
+    if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+    console.log(':', gMeme.lines[gMeme.selectedLineIdx].pos.y)
+
+}
 
 function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font = 'impact') {
     let line = { txt, size, align, color, font }
@@ -90,12 +104,6 @@ function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font =
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
 
-function removeLine() {
-    let isSure = confirm('Are you sure?')
-    if (isSure) {
-        gMeme.lines.splice(gMeme.selectedLineIdx, 1)
-    }
-}
 
 function setTextAlign(align) {
     console.log('align:', align)
@@ -108,20 +116,6 @@ function setTextAlign(align) {
     } else if (align === 'center') {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 2
     }
-}
-
-function MoveLineUp() {
-    if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
-    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
-    console.log(':move up', gMeme.lines[gMeme.selectedLineIdx].pos.y)
-
-}
-
-function moveLineDown() {
-    if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
-    gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
-    console.log(':', gMeme.lines[gMeme.selectedLineIdx].pos.y)
-
 }
 
 function uploadImg() {

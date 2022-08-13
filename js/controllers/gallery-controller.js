@@ -5,8 +5,6 @@ function onInit() {
 }
 
 function renderGallery() {
-    // document.querySelector('.meme-container').style.display = 'none'
-    // document.querySelector('.img-gallery-container').style.display = 'block'
     closeMemeEditor()
     const elGallery = document.querySelector('.img-gallery')
     const imgs = getImages()
@@ -53,6 +51,7 @@ function resetGMeme() {
     let elText = document.querySelector('.text-input')
     elText.value = ''
 }
+
 
 
 

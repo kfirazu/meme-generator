@@ -72,7 +72,7 @@
                         <option value="roboto">Roboto</option>
                     </select>
                 </div>
-                
+
                 <div class="publish-btn-container editor-layout flex space-between align-center">
                     <button class="share-btn" onclick="uploadImg()">Share</button>
                     <div class="share-container flex space-between flex-col"></div>
@@ -84,6 +84,14 @@
 
         <!-- gallery -->
         <section class="img-gallery-container main-layout full">
+            <!-- <input list="keywords" name="keywords" id="keywords" placeholder="search keyword" oninput="onSetGalleryFilter(this.value)">
+            <datalist id="keywords">
+                <option value="funny">
+                <option value="politics">
+                <option value="animals">
+                <option value="baby">
+                <option value="celebrities">
+            </datalist> -->
             <button class="random-meme-btn" onclick="renderRandomMeme()">im Flexible</button>
             <div class="img-gallery grid full"></div>
         </section>

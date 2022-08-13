@@ -10,14 +10,13 @@
 
 .img-gallery-container {
     height: 100%;
-    /* min-height: 20vh; */
     margin-inline-start: auto;
     margin-inline-end: auto;
     background-color: var(--clr4);
 }
 
 .img-gallery-container .img-gallery>img:hover {
-    outline: 5px solid #1d1d1d;
+    outline: 5px solid #d64e1d83;
 
 }
 

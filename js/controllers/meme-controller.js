@@ -12,7 +12,6 @@ function initCanvas() {
 
 function renderMeme() {
     document.querySelector('.img-gallery-container').style.display = 'none'
-    // document.querySelector('.meme-container').style.display = 'grid'
     document.querySelector('.meme-container').style.display = 'flex'
     const meme = getMeme()
     const img = new Image()
@@ -78,7 +77,6 @@ function onSwitchLine() {
     switchLine()
     renderInputValue()
     setLineFocus()
-    // renderMeme()
 }
 
 
@@ -92,6 +90,33 @@ function onMoveLineDown() {
     renderMeme()
 }
 
+function onSetTextAlign(align) {
+    setTextAlign(align)
+    renderMeme()
+}
+
+function onSetFont(font) {
+    setFont(font);
+    renderMeme();
+}
+
+function onDownloadMeme(elLink) {
+    const data = gElCanvas.toDataURL();
+    elLink.href = data;
+}
+
+function renderInputValue() {
+    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
+    let elInput = document.querySelector('.text-input')
+    elInput.value = inputText
+}
+
+function resizeCanvas() {
+    const elCanvasContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elCanvasContainer.offsetWidth
+    gElCanvas.height = elCanvasContainer.offsetHeight
+}
+
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
@@ -100,6 +125,7 @@ function addListeners() {
         renderMeme()
     })
 }
+
 
 function addMouseListeners() {
     gElCanvas.addEventListener('mousemove', onMove)
@@ -112,35 +138,6 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchmove', onMove)
     gElCanvas.addEventListener('touchstart', onDown)
     gElCanvas.addEventListener('touchend', onUp)
-}
-
-function onSetTextAlign(align) {
-    setTextAlign(align)
-    renderMeme()
-}
-
-function onSetFont(font) {
-    setFont(font);
-    renderMeme();
-}
-
-
-function onDownloadMeme(elLink) {
-    const data = gElCanvas.toDataURL();
-    elLink.href = data;
-}
-
-
-function renderInputValue() {
-    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
-    let elInput = document.querySelector('.text-input')
-    elInput.value = inputText
-}
-
-function resizeCanvas() {
-    const elCanvasContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elCanvasContainer.offsetWidth
-    gElCanvas.height = elCanvasContainer.offsetHeight
 }
 
 // function drawRect(x, y, width, height) {

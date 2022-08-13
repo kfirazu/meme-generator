@@ -1,10 +1,9 @@
 .control-box {
     width: 400px;
     height: 400px;
-    /* border: 2px solid black; */
     border-radius: 15px;
-    /* background-color: rgba(227, 204, 176, 0.521); */
     margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.474);
 
 
 }
@@ -22,12 +21,17 @@
     margin-top: 10px;
     width: 90%;
     margin-inline-start: 2.5%;
+    border: 0.5px solid burlywood;
 }
+
+
+
 
 .line-controller-container button {
     width: 75px;
     margin-inline-start: 2rem;
     margin-inline-end: 2rem;
+    background-color: azure;
 
 }
 
@@ -55,13 +59,13 @@
 }
 
 .line-controller-btn {
-    background-color: rgb(160, 149, 136)
+    background-color: rgb(227, 220, 211)
 }
 
 .text-edit-btn {
     width: 50px;
     height: 50px;
-    background-color:  rgb(160, 149, 136);
+    background-color: azure;
 }
 
 
@@ -93,7 +97,7 @@
     text-align: center;
     height: 50px;
     border-radius: 15px;
-    background-color: rgb(160, 149, 136);
+    background-color: azure;
 }
 
 
