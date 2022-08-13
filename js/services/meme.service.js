@@ -7,22 +7,7 @@ var gCanvas = {
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
-    lines: [
-        // {
-        //     txt: 'Hello',
-        //     pos: {x: gCanvas.width / 2 , y: gCanvas.height / 10},
-        //     size: 30,
-        //     align: 'top',
-        //     color: 'white'
-        // },
-        // {
-        //     txt: 'World',
-        //     pos: {x: gCanvas.width / 2, y: gCanvas.height -50},
-        //     size: 30,
-        //     align: 'bottom',
-        //     color: 'white'
-        // }
-    ]
+    lines: []
 }
 
 var gQuotes = [
@@ -89,8 +74,8 @@ function switchLine() {
 
 // }
 
-function addLine(txt = ' ', size = 30, align = 'center', color = 'white',) {
-    let line = { txt, size, align, color }
+function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font = 'impact') {
+    let line = { txt, size, align, color, font }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 10 }
@@ -126,16 +111,16 @@ function setTextAlign(align) {
 }
 
 function MoveLineUp() {
-    if(gMeme.lines[gMeme.selectedLineIdx]. pos.y === 20) return
-    gMeme.lines[gMeme.selectedLineIdx]. pos.y -=10
-    console.log(':move up',gMeme.lines[gMeme.selectedLineIdx]. pos.y )
+    if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
+    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+    console.log(':move up', gMeme.lines[gMeme.selectedLineIdx].pos.y)
 
 }
 
 function moveLineDown() {
-    if(gMeme.lines[gMeme.selectedLineIdx]. pos.y > gCanvas.height - 30) return
-    gMeme.lines[gMeme.selectedLineIdx]. pos.y +=10
-    console.log(':',gMeme.lines[gMeme.selectedLineIdx]. pos.y )
+    if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+    console.log(':', gMeme.lines[gMeme.selectedLineIdx].pos.y)
 
 }
 
@@ -152,6 +137,10 @@ function uploadImg() {
     }
     doUploadImg(imgDataUrl, onSuccess);
 
+}
+
+function setFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font;
 }
 
 

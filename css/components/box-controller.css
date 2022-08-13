@@ -88,3 +88,11 @@
     border-radius: 0.8rem;
 }
 
+.text-edit-container select{
+    width: 110px;
+    text-align: center;
+    height: 50px;
+    border-radius: 15px;
+}
+
+

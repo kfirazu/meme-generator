@@ -19,3 +19,19 @@
     font-family: Montserrat;
     src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf/montserrat-regular);
 }
+
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: roberto;
+    src: url(/fonts/roboto/roboto-medium.ttf);
+}
+
+@font-face {
+    font-family: ubuntu;
+    src: url(/fonts/Ubuntu/Ubuntu-Regular.ttf);
+}

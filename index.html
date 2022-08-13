@@ -66,7 +66,13 @@
                     <button class="text-edit-btn" onclick="onMoveLineUp()">move up</button>
                     <button class="text-edit-btn" onclick="onMoveLineDown()">move down</button>
                     <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
+                    <select title="fonts" name="font-selector" class="font-selector" onclick="onSetFont(this.value)">
+                        <option value="impact">Impact</option>
+                        <option value="david">Ubuntu</option>
+                        <option value="roboto">Roboto</option>
+                    </select>
                 </div>
+                
                 <div class="publish-btn-container editor-layout flex space-between align-center">
                     <button class="share-btn" onclick="uploadImg()">Share</button>
                     <div class="share-container flex space-between flex-col"></div>
