@@ -145,6 +145,12 @@ function setLineFocus() {
 
 }
 
+function renderInputValue() {
+    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
+    let elInput = document.querySelector('.text-input')
+    elInput.value = inputText
+}
+
 function resizeCanvas() {
     const elCanvasContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elCanvasContainer.offsetWidth

@@ -126,20 +126,20 @@ function setTextAlign(align) {
 }
 
 function MoveLineUp() {
-    const line = gMeme.lines[gMeme.selectedLineIdx].pos.x
-    line.height--
+    let line = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    console.log('gMeme.lines[gMeme.selectedLineIdx].pos.y:', gMeme.lines[gMeme.selectedLineIdx].pos.y)
+    line += 10
+    console.log('line:', line)
+
 }
 
 function moveLineDown() {
-    const line = gMeme.lines[gMeme.selectedLineIdx].pos.y
-    line.height--
+    let line = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    line -= 10
+    console.log('line:', line)
+
 }
 
-function renderInputValue() {
-    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
-    let elInput = document.querySelector('.text-input')
-    elInput.value = inputText
-}
 
 // function getSelectedLine(selectedLine){
 //     const selectedLine = gMeme.selectedLineIdx
