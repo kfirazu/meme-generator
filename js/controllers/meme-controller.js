@@ -60,6 +60,7 @@ function onAddLine() {
 
 function onRemoveLine() {
     removeLine()
+    document.querySelector('.text-input').value = ''
     renderMeme()
 }
 

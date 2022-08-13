@@ -58,13 +58,31 @@
 
     canvas {
         min-width: 80%;
-        /* width: 250px; */
+        margin-top: 85px;
+        width: 320px;
     }
 
     .control-box {
-        min-width: 50%;
-        /* width: 250px; */
+        height: 320px;
+        width: 320px;
     }
+
+    .line-controller-container button{
+        font-size: 1.5rem;
+    }
+
+    .line-controller-btn img{
+        width: 80%;
+    }
+
+    .text-edit-container{
+        margin-top: 0;
+
+    }
+    .text-edit-container .text-edit-btn {
+        width: 95%;
+    }
+
 
 }
 

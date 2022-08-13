@@ -20,3 +20,12 @@
     outline: 5px solid #1d1d1d;
 
 }
+
+.random-meme-btn {
+    border-radius: 12px;
+    padding: 8px;
+    margin: 1rem 1rem 0;
+    font-family: sans-serif;
+    font-size: 1rem;
+    width: 100px;
+}

@@ -89,16 +89,16 @@ function switchLine() {
 
 // }
 
-function addLine(txt = ' ', size = 30, align = 'center', color = 'white', height = 0) {
-    let line = { txt, size, align, color, height }
+function addLine(txt = ' ', size = 30, align = 'center', color = 'white',) {
+    let line = { txt, size, align, color }
 
     if (gMeme.lines.length === 0) {
-        line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
+        line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 10 }
     }
     else if (gMeme.lines.length === 1) {
-        line.pos = { x: gCanvas.width / 3, y: gCanvas.height - 50 }
+        line.pos = { x: gCanvas.width / 2, y: gCanvas.height - 50 }
     }
-    else line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 2 }
+    else line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 2 }
 
 
     gMeme.lines.push(line)
@@ -126,24 +126,18 @@ function setTextAlign(align) {
 }
 
 function MoveLineUp() {
-    let lineHeight = gMeme.lines[gMeme.selectedLineIdx].pos.y
-    console.log('gMeme.lines[gMeme.selectedLineIdx].pos.y:', gMeme.lines[gMeme.selectedLineIdx].pos.y)
-    lineHeight += 10
-    console.log('line:', lineHeight)
+    if(gMeme.lines[gMeme.selectedLineIdx]. pos.y === 20) return
+    gMeme.lines[gMeme.selectedLineIdx]. pos.y -=10
+    console.log(':move up',gMeme.lines[gMeme.selectedLineIdx]. pos.y )
 
 }
 
 function moveLineDown() {
-    let lineHeight = gMeme.lines[gMeme.selectedLineIdx].pos.y
-    lineHeight -= 10
-    console.log('line:', lineHeight)
+    if(gMeme.lines[gMeme.selectedLineIdx]. pos.y > gCanvas.height - 30) return
+    gMeme.lines[gMeme.selectedLineIdx]. pos.y +=10
+    console.log(':',gMeme.lines[gMeme.selectedLineIdx]. pos.y )
 
 }
-
-
-// function getSelectedLine(selectedLine){
-//     const selectedLine = gMeme.selectedLineIdx
-// }
 
 function uploadImg() {
     const imgDataUrl = gElCanvas.toDataURL("image/jpeg")

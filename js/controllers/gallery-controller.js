@@ -17,8 +17,6 @@ function renderGallery() {
 function onImgSelect(imgId) {
     setImg(imgId)
     initCanvas()
-    renderMeme()
-
 }
 
 function toggleMenu() {
