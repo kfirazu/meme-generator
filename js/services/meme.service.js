@@ -80,7 +80,7 @@ function decreaseFontSize() {
 
 function switchLine() {
     gMeme.selectedLineIdx++
-    if (gMeme.selectedLineIdx > gMeme.lines.length) gMeme.selectedLineIdx = 0
+    if (gMeme.selectedLineIdx > gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
 
 }
 
@@ -126,17 +126,17 @@ function setTextAlign(align) {
 }
 
 function MoveLineUp() {
-    let line = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    let lineHeight = gMeme.lines[gMeme.selectedLineIdx].pos.y
     console.log('gMeme.lines[gMeme.selectedLineIdx].pos.y:', gMeme.lines[gMeme.selectedLineIdx].pos.y)
-    line += 10
-    console.log('line:', line)
+    lineHeight += 10
+    console.log('line:', lineHeight)
 
 }
 
 function moveLineDown() {
-    let line = gMeme.lines[gMeme.selectedLineIdx].pos.y
-    line -= 10
-    console.log('line:', line)
+    let lineHeight = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    lineHeight -= 10
+    console.log('line:', lineHeight)
 
 }
 
