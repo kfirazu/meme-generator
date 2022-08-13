@@ -21,6 +21,10 @@ function onImgSelect(imgId) {
 
 }
 
+function toggleMenu() {
+    document.body.classList.toggle('menu-opened');
+}
+
 
 
 
