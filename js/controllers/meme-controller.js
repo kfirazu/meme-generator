@@ -7,7 +7,6 @@ var gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-
     renderMeme()
 }
 
@@ -86,6 +85,7 @@ function onSwitchLine() {
     // renderMeme()
 }
 
+
 // function onMoveUp() {
 //     MoveUp()
 //     renderMeme()
@@ -98,6 +98,10 @@ function onSwitchLine() {
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
+    window.addEventListener('resize', () => {
+        resizeCanvas()
+        renderMeme()
+    })
 }
 
 function addMouseListeners() {
@@ -139,6 +143,13 @@ function setLineFocus() {
     drawRect(gCanvas.width / 3, gCanvas.height / 10, selectedLineLength, selectedLineHeight)
 
 }
+
+function resizeCanvas() {
+    const elCanvasContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elCanvasContainer.offsetWidth
+    gElCanvas.height = elCanvasContainer.offsetHeight
+}
+
 
 
 
