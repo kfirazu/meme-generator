@@ -25,6 +25,12 @@ var gMeme = {
     ]
 }
 
+var gQuetes = [
+    'kfir',
+    'azulay',
+    'yair'
+]
+
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
 }
@@ -75,8 +81,13 @@ function switchLine() {
 
 // }
 
-function addLine() {
-    let line = { txt: ' ', size: 30, align: 'left', color: 'white' }
+// function isLineClicked(clickedPos){
+//     const meme = getMeme()
+
+// }
+
+function addLine(txt = ' ',size = 30, align = 'center', color = 'white' ) {
+    let line = { txt,  size, align, color }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
