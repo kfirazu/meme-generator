@@ -16,7 +16,6 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
-    // onOpenMemeEditor()
     initCanvas()
     renderMeme()
 
@@ -34,17 +33,18 @@ function closeMemeEditor() {
 
 function renderRandomMeme() {
     let randomImgIdx = getRandomInt(0, gImgs.length - 1)
-    console.log('randomImgIdx:', randomImgIdx)
     onImgSelect(`${gImgs[randomImgIdx].id}`)
 
     let lineAmount = getRandomInt(1, 3)
     for (var i = 1; i <= lineAmount; i++) {
-        let randomTxt = getRandomInt(0, gQuetes.length - 1)
-        addLine(gQuetes[randomTxt])
+        let randomTxt = getRandomInt(0, gQuotes.length - 1)
+        addLine(gQuotes[randomTxt])
     }
 
-}
+    let randomColor = getRandomColor()
+    setTextColor(randomColor)
 
+}
 
 function resetGMeme() {
     gMeme = {

@@ -86,14 +86,15 @@ function onSwitchLine() {
 }
 
 
-// function onMoveUp() {
-//     MoveUp()
-//     renderMeme()
-// }
+function onMoveLineUp() {
+    MoveLineUp()
+    renderMeme()
+}
 
-// function onMoveDown()
-//     moveDown()
-//     renderMeme()
+function onMoveLineDown() {
+    moveLineDown()
+    renderMeme()
+}
 
 function addListeners() {
     addMouseListeners()

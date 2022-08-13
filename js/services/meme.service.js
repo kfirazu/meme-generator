@@ -25,10 +25,22 @@ var gMeme = {
     ]
 }
 
-var gQuetes = [
-    'kfir',
-    'azulay',
-    'yair'
+var gQuotes = [
+    'Enter text here',
+    'Hello world',
+    'Coding Academy',
+    'Fullstack',
+    'So many books, so little time',
+    'Function "init" is not defined',
+    'Sprint 2',
+    'Code review',
+    'אשמח לעזרה',
+    'london calling',
+    'boys dont cry',
+    'Praise you',
+    'What do you want from me',
+    'Major Tom- coming home',
+    'Good Morning',
 ]
 
 function setImg(imgId) {
@@ -72,22 +84,13 @@ function switchLine() {
 
 }
 
-// function moveUp(){
-//     gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
-// }
-
-// function moveDown(){
-//     gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
-
-// }
-
 // function isLineClicked(clickedPos){
 //     const meme = getMeme()
 
 // }
 
-function addLine(txt = ' ',size = 30, align = 'center', color = 'white' ) {
-    let line = { txt,  size, align, color }
+function addLine(txt = ' ', size = 30, align = 'center', color = 'white', height = 0) {
+    let line = { txt, size, align, color, height }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 3, y: gCanvas.height / 10 }
@@ -120,6 +123,16 @@ function setTextAlign(align) {
     } else if (align === 'center') {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 2
     }
+}
+
+function MoveLineUp() {
+    const line = gMeme.lines[gMeme.selectedLineIdx].pos.x
+    line.height--
+}
+
+function moveLineDown() {
+    const line = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    line.height--
 }
 
 function renderInputValue() {
