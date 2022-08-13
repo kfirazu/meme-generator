@@ -82,6 +82,9 @@
     width: 42px;
     background-color: #516fad;;
 
+}
 
+.control-box button {
+    border-radius: 0.8rem;
 }
 
