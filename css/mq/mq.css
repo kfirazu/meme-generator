@@ -6,6 +6,7 @@
         flex-direction: column;
         margin-inline-start: 1rem;
         align-items: center;
+        
 
     }
 
@@ -63,7 +64,7 @@
     }
 
     .control-box {
-        height: 320px;
+        height: 350px;
         width: 320px;
         margin-top: 0;
         margin-bottom: 0.5px;
@@ -71,11 +72,16 @@
     }
 
     .line-controller-container button {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .line-controller-btn img {
-        width: 80%;
+        width: 70%;
+    }
+
+    .line-controller-btn.add-line {
+        margin-inline-start:30px ;
     }
 
     .text-edit-container {
@@ -96,6 +102,20 @@
         height: 170px;
         min-width: 370px;
     }
+
+    .publish-btn-container .btn-save-meme{
+        margin-inline-start: 10px;
+    }
+
+    .publish-btn-container .download-btn{
+        margin-inline-start: 10px;
+        margin-inline-end: 0;
+    }
+
+    .publish-btn-container .share-btn {
+        margin-inline-end: 0;
+    }
+
 
 }
 

@@ -45,8 +45,8 @@
                         <button class="line-controller-btn switch-line" onclick="onSwitchLine()"><img
                                 src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
                                 alt="up-and-down-arrows"></button>
-                        <button class="line-controller-btn remove-line" onclick="onRemoveLine()"><img src="/img/icons/trash.png"
-                                alt="trash-can">
+                        <button class="line-controller-btn remove-line" onclick="onRemoveLine()"><img
+                                src="/img/icons/trash.png" alt="trash-can">
                         </button>
                     </div>
                 </div>
@@ -65,7 +65,11 @@
                             src="/img/icons/align-to-right.png" alt=""></button>
                     <button class="text-edit-btn" onclick="onMoveLineUp()">Move up</button>
                     <button class="text-edit-btn" onclick="onMoveLineDown()">Move down</button>
-                    <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
+                    <label class="color-picker-container">
+                        <input type="color" class="txt-color" name="color-picker"
+                            oninput="onSetTextColor(this.value)" /> 
+                            <!-- <img class="btn color-picker" src="/img/icons/paint-board-and-brush.png" alt="color picker"> -->
+                    </label>
                     <select title="fonts" name="font-selector" class="font-selector" onclick="onSetFont(this.value)">
                         <option value="impact">Impact</option>
                         <option value="david">Ubuntu</option>
@@ -96,18 +100,18 @@
             </datalist> -->
             <button class="random-meme-btn" onclick="renderRandomMeme()">I'm Flexible</button>
             <div class="img-gallery grid full"></div>
-            
+
         </section>
     </main>
-            <!-- footer -->
-            <footer class="main-footer-container flex">
-                <div class="main-footer flex flex-col align-cneter justify-center">
-                    <div class="footer-logo"> <img src="img/logo.png" alt="logo-image"></div>
-                    <small>Made By Kfir Azulay</small>
-                    
-                </div>
-            </footer>
-            
+    <!-- footer -->
+    <footer class="main-footer-container flex">
+        <div class="main-footer flex flex-col align-cneter justify-center">
+            <div class="footer-logo"> <img src="img/logo.png" alt="logo-image"></div>
+            <small>Made By Kfir Azulay</small>
+
+        </div>
+    </footer>
+
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>
