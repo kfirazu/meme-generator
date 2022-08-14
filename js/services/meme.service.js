@@ -36,9 +36,6 @@ function getMeme() {
     return gMeme
 }
 
-function getImages() {
-    return gImgs
-}
 
 function setLineText(txt) {
     if (gMeme.lines.length === 0) {
@@ -68,7 +65,7 @@ function switchLine() {
 }
 
 function removeLine() {
-    let isSure = confirm('Are you sure?')
+    const isSure = confirm('Are you sure?')
     if (isSure) {
         gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     }
@@ -78,18 +75,20 @@ function MoveLineUp() {
     if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
     gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
     console.log(':move up', gMeme.lines[gMeme.selectedLineIdx].pos.y)
-
 }
 
 function moveLineDown() {
     if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
     gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
     console.log(':', gMeme.lines[gMeme.selectedLineIdx].pos.y)
+}
 
+function getSelectedLine(){
+   return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font = 'impact') {
-    let line = { txt, size, align, color, font }
+    const line = { txt, size, align, color, font }
 
     if (gMeme.lines.length === 0) {
         line.pos = { x: gCanvas.width / 2, y: gCanvas.height / 10 }
@@ -132,6 +131,7 @@ function uploadImg() {
     doUploadImg(imgDataUrl, onSuccess);
 
 }
+
 
 function setFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font;

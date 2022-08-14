@@ -20,6 +20,8 @@ function renderMeme() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         drawLines(gMeme.lines)
+        // drawRect(gMeme.lines[gMeme.selectedLineIdx].pos.x, gMeme.lines[gMeme.selectedLineIdx].pos.y, gMeme.lines[gMeme.selectedLineIdx].pos.x+200) 
+
     }
 }
 
@@ -44,12 +46,16 @@ function onSetLineText(text) {
     const elText = document.querySelector('.text-input');
     setLineText(text)
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onAddLine() {
     addLine()
     document.querySelector('.text-input').value = ''
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onRemoveLine() {
@@ -61,43 +67,59 @@ function onRemoveLine() {
 function onSetTextColor(color) {
     setTextColor(color)
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onIncreaseFontSize() {
     increaseFontSize()
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onDecreaseFontSize() {
     decreaseFontSize()
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onSwitchLine() {
     switchLine()
-    renderInputValue()
-    setLineFocus()
+    // const line = { txt, size, align, color, font } pos
+    updateLineTxtInput()
+    renderMeme()
+    setTimeout(() => setLineFocus(), 10);
 }
 
 
 function onMoveLineUp() {
     MoveLineUp()
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onMoveLineDown() {
     moveLineDown()
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onSetTextAlign(align) {
     setTextAlign(align)
     renderMeme()
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onSetFont(font) {
     setFont(font);
     renderMeme();
+    setTimeout(() => setLineFocus(), 10);
+
 }
 
 function onDownloadMeme(elLink) {
@@ -105,10 +127,10 @@ function onDownloadMeme(elLink) {
     elLink.href = data;
 }
 
-function renderInputValue() {
-    let inputText = gMeme.lines[gMeme.selectedLineIdx].txt
-    let elInput = document.querySelector('.text-input')
-    elInput.value = inputText
+function updateLineTxtInput() {
+    const { txt } = gMeme.lines[gMeme.selectedLineIdx]
+    const elInput = document.querySelector('.text-input')
+    elInput.value = txt
 }
 
 function resizeCanvas() {
@@ -140,22 +162,31 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchend', onUp)
 }
 
-// function drawRect(x, y, width, height) {
-//     gCtx.beginPath();
-//     gCtx.lineWidth = 5;
-//     gCtx.strokeStyle = 'black';
-//     gCtx.strokeRect(x, y, width, height);
-//     gCtx.closePath();
-// }
+function drawRect(x, y, height, width) {
+    gCtx.beginPath();
+    gCtx.lineWidth = 3;
+    gCtx.strokeStyle = 'black';
+    gCtx.strokeRect(x, y, height, width);
+    gCtx.closePath();
+}
 
-// function setLineFocus() {
-//     const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
-//     console.log('selectedLine:', selectedLine)
-//     const selectedLineLength = gCtx.measureText(`${selectedLine.txt}`)
-//     const selectedLineHeight = gMeme.lines.size
-//     drawRect(gCanvas.width / 3, gCanvas.height / 10, selectedLineLength, selectedLineHeight)
+function setLineFocus() {
+    const line = getSelectedLine()
+    const { size } = line
+    const selectedLineLength = gCtx.measureText(`${line.txt}`)
+    const x = line.pos.x - (selectedLineLength.width / 2)
+    const y = line.pos.y - size / 2
+    const height = size + 10
+    drawRect(x, y, selectedLineLength.width, height)
 
-// }
+
+
+    // const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
+    // const selectedLineLength = gCtx.measureText(`${selectedLine.txt}`)
+    // const selectedLineHeight = gMeme.lines.size
+    // drawRect(gCanvas.width / 3, gCanvas.height / 10, selectedLineLength, selectedLineHeight)
+
+}
 
 
 

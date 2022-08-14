@@ -41,6 +41,10 @@ function getImgById(imgId) {
     return gImgs.find(img => img.id === imgId)
 }
 
+function getImgs() {
+    return gImgs
+}
+
 
 
 

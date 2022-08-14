@@ -7,9 +7,9 @@ function onInit() {
 function renderGallery() {
     closeMemeEditor()
     const elGallery = document.querySelector('.img-gallery')
-    const imgs = getImages()
-    const imgsStr = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)
-    elGallery.innerHTML = imgsStr.join('')
+    const imgs = getImgs()
+    const strHTMLs = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)
+    elGallery.innerHTML = strHTMLs.join('')
 }
 
 function onImgSelect(imgId) {
