@@ -139,6 +139,7 @@ function resizeCanvas() {
 function onSaveMeme(){
     const memeToUrl = gElCanvas.toDataURL()
     saveMeme(memeToUrl)
+    flashMsg(`Meme saved`)
 }
 
 function addListeners() {
@@ -187,6 +188,15 @@ function setLineFocus() {
     }
     drawRect(x, y, selectedLineLength.width + 20, height)
 
+}
+
+function flashMsg(msg) {
+    const el = document.querySelector('.user-msg')
+    el.innerText = msg
+    el.classList.add('open')
+    setTimeout(() => {
+        el.classList.remove('open')
+    }, 3000)
 }
 
 

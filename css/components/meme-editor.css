@@ -13,3 +13,17 @@ canvas {
     width: 100%;
     min-width: 100%;
 }
+
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    right:10px;
+    background-color: var(--clr2);
+    padding: 15px;
+    color: var(--clr1);
+    font-family: montserrat, sans-serif;
+}
+.user-msg.open {
+    bottom: 200px;
+    transition: bottom .5s;
+}

@@ -63,8 +63,8 @@
                             src="/img/icons/center-text-alignment.png" alt=""></button>
                     <button class="text-edit-btn" onclick="onSetTextAlign('right')"><img
                             src="/img/icons/align-to-right.png" alt=""></button>
-                    <button class="text-edit-btn" onclick="onMoveLineUp()">move up</button>
-                    <button class="text-edit-btn" onclick="onMoveLineDown()">move down</button>
+                    <button class="text-edit-btn" onclick="onMoveLineUp()">Move up</button>
+                    <button class="text-edit-btn" onclick="onMoveLineDown()">Move down</button>
                     <input type="color" class="txt-color" name="color-picker" oninput="onSetTextColor(this.value)" />
                     <select title="fonts" name="font-selector" class="font-selector" onclick="onSetFont(this.value)">
                         <option value="impact">Impact</option>
@@ -81,6 +81,7 @@
                     <button class="btn-save-meme" onclick="onSaveMeme()">Save</button>
                 </div>
             </aside>
+            <div class="user-msg"></div>
         </section>
 
         <!-- gallery -->
@@ -93,7 +94,7 @@
                 <option value="baby">
                 <option value="celebrities">
             </datalist> -->
-            <button class="random-meme-btn" onclick="renderRandomMeme()">im Flexible</button>
+            <button class="random-meme-btn" onclick="renderRandomMeme()">I'm Flexible</button>
             <div class="img-gallery grid full"></div>
         </section>
     </main>
