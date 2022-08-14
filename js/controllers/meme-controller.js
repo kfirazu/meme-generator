@@ -20,8 +20,6 @@ function renderMeme() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         drawLines(gMeme.lines)
-        // drawRect(gMeme.lines[gMeme.selectedLineIdx].pos.x, gMeme.lines[gMeme.selectedLineIdx].pos.y, gMeme.lines[gMeme.selectedLineIdx].pos.x+200) 
-
     }
 }
 
@@ -87,7 +85,6 @@ function onDecreaseFontSize() {
 
 function onSwitchLine() {
     switchLine()
-    // const line = { txt, size, align, color, font } pos
     updateLineTxtInput()
     renderMeme()
     setTimeout(() => setLineFocus(), 10);
@@ -148,7 +145,6 @@ function addListeners() {
     })
 }
 
-
 function addMouseListeners() {
     gElCanvas.addEventListener('mousemove', onMove)
     gElCanvas.addEventListener('mousedown', onDown)
@@ -162,11 +158,11 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchend', onUp)
 }
 
-function drawRect(x, y, height, width) {
+function drawRect(x, y, width, height) {
     gCtx.beginPath();
     gCtx.lineWidth = 3;
     gCtx.strokeStyle = 'black';
-    gCtx.strokeRect(x, y, height, width);
+    gCtx.strokeRect(x, y, width, height);
     gCtx.closePath();
 }
 
@@ -174,22 +170,19 @@ function setLineFocus() {
     const line = getSelectedLine()
     const { size } = line
     const selectedLineLength = gCtx.measureText(`${line.txt}`)
-    const x = line.pos.x - (selectedLineLength.width / 2)
-    const y = line.pos.y - size / 2
     const height = size + 10
-    drawRect(x, y, selectedLineLength.width, height)
-
-
-
-    // const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
-    // const selectedLineLength = gCtx.measureText(`${selectedLine.txt}`)
-    // const selectedLineHeight = gMeme.lines.size
-    // drawRect(gCanvas.width / 3, gCanvas.height / 10, selectedLineLength, selectedLineHeight)
+    let x 
+    const y = line.pos.y - size / 2
+    if (line.align === 'center') {
+        x = line.pos.x - (selectedLineLength.width / 2) - 10
+    } else if (line.align === 'left') {
+        x = line.pos.x - 10
+    } else {
+        x = gCanvas.width - selectedLineLength.width - 30
+    }
+    drawRect(x, y, selectedLineLength.width + 20, height)
 
 }
-
-
-
 
 
 

@@ -74,13 +74,11 @@ function removeLine() {
 function MoveLineUp() {
     if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
     gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
-    console.log(':move up', gMeme.lines[gMeme.selectedLineIdx].pos.y)
 }
 
 function moveLineDown() {
     if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
     gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
-    console.log(':', gMeme.lines[gMeme.selectedLineIdx].pos.y)
 }
 
 function getSelectedLine(){
@@ -105,12 +103,11 @@ function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font =
 
 
 function setTextAlign(align) {
-    console.log('align:', align)
     gMeme.lines[gMeme.selectedLineIdx].align = align
     if (align === 'left') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 6
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = 20
     } else if (align === 'right') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width - 40
+        gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width - 20
 
     } else if (align === 'center') {
         gMeme.lines[gMeme.selectedLineIdx].pos.x = gCanvas.width / 2
@@ -129,7 +126,6 @@ function uploadImg() {
         </a>`
     }
     doUploadImg(imgDataUrl, onSuccess);
-
 }
 
 
@@ -149,7 +145,6 @@ function doUploadImg(imgDataUrl, onSuccess) {
     })
         .then(res => res.text())
         .then((url) => {
-            console.log('Got back live url:', url);
             onSuccess(url)
         })
         .catch((err) => {

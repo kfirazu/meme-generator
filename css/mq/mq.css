@@ -9,7 +9,6 @@
 
     }
 
-
     .toggle-menu {
         color: var(--clr5);
         background-color: var(--clr1);
@@ -31,7 +30,6 @@
         min-width: 200px;
         transition: transform .6s, box-shadow .6s;
         transform: translateX(100%);
-
 
     }
 
@@ -99,7 +97,6 @@
         min-width: 370px;
     }
 
-
 }
 
 /* small */
@@ -138,7 +135,6 @@
         width: 100%;
         padding: 5px;
     }
-
 
 }
 
