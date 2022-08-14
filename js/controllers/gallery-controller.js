@@ -27,6 +27,21 @@ function closeMemeEditor() {
     onResetMeme()
 }
 
+function onOpenSavedMemes(){
+    document.querySelector('.meme-container').style.display = 'none'
+    document.querySelector('.img-gallery-container').style.display = 'block'
+    renderSavedMemes()
+
+}
+
+function renderSavedMemes(){
+    const savedMemes = getSavedMemes()
+    console.log('savedMemes:', savedMemes)
+    const elSavedGallery = document.querySelector('.img-gallery')
+    const strHTMLs = savedMemes.map( meme => `<img src="${meme}" />`)
+    elSavedGallery.innerHTML = strHTMLs.join('')
+}
+
 function renderRandomMeme() {
     let randomImgIdx = getRandomInt(0, gImgs.length - 1)
     onImgSelect(`${gImgs[randomImgIdx].id}`)

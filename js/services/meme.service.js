@@ -149,7 +149,8 @@ function uploadImg() {
 }
 
 function saveMeme() {
-    const memeToSave = JSON.parse(JSON.stringify(gMeme))
+    const memeToSave = gElCanvas.toDataURL()
+    // const memeToSave = JSON.parse(JSON.stringify(gMeme))
     gSavedMemes.push(memeToSave)
     saveToStorage(STORAGE_KEY, gSavedMemes)
 }
