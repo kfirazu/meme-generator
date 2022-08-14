@@ -24,7 +24,7 @@ function toggleMenu() {
 function closeMemeEditor() {
     document.querySelector('.meme-container').style.display = 'none'
     document.querySelector('.img-gallery-container').style.display = 'block'
-    resetGMeme()
+    onResetMeme()
 }
 
 function renderRandomMeme() {
@@ -42,12 +42,8 @@ function renderRandomMeme() {
 
 }
 
-function resetGMeme() {
-    gMeme = {
-        selectedImgId: 1,
-        selectedLineIdx: 0,
-        lines: []
-    }
+function onResetMeme() {
+   resetMeme()
     let elText = document.querySelector('.text-input')
     elText.value = ''
 }
