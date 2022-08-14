@@ -92,7 +92,7 @@ function onSwitchLine() {
 
 
 function onMoveLineUp() {
-    MoveLineUp()
+    moveLineUp()
     renderMeme()
     setTimeout(() => setLineFocus(), 10);
 
@@ -134,6 +134,10 @@ function resizeCanvas() {
     const elCanvasContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elCanvasContainer.offsetWidth
     gElCanvas.height = elCanvasContainer.offsetHeight
+}
+
+function onSaveMeme(){
+    saveMeme()
 }
 
 function addListeners() {

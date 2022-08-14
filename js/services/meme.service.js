@@ -1,4 +1,5 @@
 'use strict'
+const STORAGE_KEY = 'memesDB'
 
 var gCanvas = {
     width: 400,
@@ -9,6 +10,8 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: []
 }
+
+var gSavedMemes = getSavedMemes()
 
 var gQuotes = [
     'Enter text here',
@@ -56,8 +59,9 @@ function increaseFontSize() {
 }
 
 function decreaseFontSize() {
-    if (gMeme.lines[gMeme.selectedLineIdx].size === 10) return
-    gMeme.lines[gMeme.selectedLineIdx].size -= 10
+    const line = getSelectedLine()
+    if (line.size === 10) return
+    line.size -= 10
 }
 
 function switchLine() {
@@ -73,18 +77,25 @@ function removeLine() {
     }
 }
 
-function MoveLineUp() {
-    if (gMeme.lines[gMeme.selectedLineIdx].pos.y === 20) return
-    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+function moveLineUp() {
+    line = getSelectedLine()
+    if (line.pos.y === 20) return
+    line.pos.y -= 10
 }
 
 function moveLineDown() {
-    if (gMeme.lines[gMeme.selectedLineIdx].pos.y > gCanvas.height - 30) return
-    gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+    const line = getSelectedLine()
+    if (line.pos.y > gCanvas.height - 30) return
+    line.pos.y += 10
 }
 
-function getSelectedLine(){
-   return gMeme.lines[gMeme.selectedLineIdx]
+function setFont(font) {
+    const line = getSelectedLine()
+    line.font = font;
+}
+
+function getSelectedLine() {
+    return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 function resetMeme() {
@@ -110,7 +121,6 @@ function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font =
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
-
 
 function setTextAlign(align) {
     gMeme.lines[gMeme.selectedLineIdx].align = align
@@ -138,11 +148,17 @@ function uploadImg() {
     doUploadImg(imgDataUrl, onSuccess);
 }
 
-
-function setFont(font) {
-    gMeme.lines[gMeme.selectedLineIdx].font = font;
+function saveMeme() {
+    const memeToSave = JSON.parse(JSON.stringify(gMeme))
+    gSavedMemes.push(memeToSave)
+    saveToStorage(STORAGE_KEY, gSavedMemes)
 }
 
+function getSavedMemes() {
+    let savedMemes = loadFromStorage(STORAGE_KEY)
+    if (!savedMemes || !savedMemes.length) savedMemes = []
+    return savedMemes
+}
 
 function doUploadImg(imgDataUrl, onSuccess) {
 
