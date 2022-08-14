@@ -16,7 +16,7 @@
             <div class="logo"> <img src="img/logo.png" alt="logo-image"></div>
             <nav class="main-nav flex">
                 <ul class="main-nav-list clean-list flex">
-                    <li><a class="flex align-center justify-center" onclick="closeMemeEditor()" href="#">Gallery</a>
+                    <li><a class="flex align-center justify-center" onclick="onOpenImgsGallery()" href="#">Gallery</a>
                     </li>
                     <li><a class="flex align-center justify-center" href="#" onclick="onOpenSavedMemes()">Saved</a></li>
                     <li><a class="flex align-center justify-center" href="#">About</a></li>
@@ -39,13 +39,13 @@
                 <div class="add-text-container editor-layout flex flex-col">
                     <input type="text" class="text-input" value="" oninput="onSetLineText(this.value) ">
                     <!-- line-control -->
-                    <div class="line-controller-container flex space-between">
-                        <button class="line-controller-btn" onclick="onAddLine(this, event)"><img
+                    <div class="line-controller-container flex ">
+                        <button class="line-controller-btn add-line" onclick="onAddLine(this, event)"><img
                                 src="/img/icons/add.png" alt=""></button>
-                        <button class="line-controller-btn" onclick="onSwitchLine()"><img
+                        <button class="line-controller-btn switch-line" onclick="onSwitchLine()"><img
                                 src="/img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
                                 alt="up-and-down-arrows"></button>
-                        <button class="line-controller-btn" onclick="onRemoveLine()"><img src="/img/icons/trash.png"
+                        <button class="line-controller-btn remove-line" onclick="onRemoveLine()"><img src="/img/icons/trash.png"
                                 alt="trash-can">
                         </button>
                     </div>
@@ -73,12 +73,12 @@
                     </select>
                 </div>
 
-                <div class="publish-btn-container editor-layout flex space-between align-center">
+                <div class="publish-btn-container editor-layout flex align-center">
                     <button class="share-btn" onclick="uploadImg()">Share</button>
                     <div class="share-container flex space-between flex-col"></div>
                     <button class="download-btn"><a href="" onclick="onDownloadMeme(this)"
                             download="download">Download</a></button>
-                    <button class="btn-save-meme" onclick="onSaveMeme()">Save</button>
+                    <button class="btn-save-meme" onclick="onSaveMeme()">Save </button>
                 </div>
             </aside>
             <div class="user-msg"></div>
@@ -96,18 +96,18 @@
             </datalist> -->
             <button class="random-meme-btn" onclick="renderRandomMeme()">I'm Flexible</button>
             <div class="img-gallery grid full"></div>
+            
         </section>
     </main>
-
-    <!-- footer -->
-    <footer class="main-footer-container flex">
-        <div class="main-footer flex flex-col align-cneter justify-center">
-            <div class="footer-logo"> <img src="img/logo.png" alt="logo-image"></div>
-            <small>Made By Kfir Azulay</small>
-
-        </div>
-    </footer>
-
+            <!-- footer -->
+            <footer class="main-footer-container flex">
+                <div class="main-footer flex flex-col align-cneter justify-center">
+                    <div class="footer-logo"> <img src="img/logo.png" alt="logo-image"></div>
+                    <small>Made By Kfir Azulay</small>
+                    
+                </div>
+            </footer>
+            
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>

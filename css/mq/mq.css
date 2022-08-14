@@ -123,7 +123,7 @@
     }
 
     .line-controller-btn img {
-        width: 60%;
+        width: 55%;
     }
 
     .text-edit-container {
@@ -136,6 +136,10 @@
         padding: 5px;
     }
 
+    .line-controller-btn.add-line {
+        margin-inline-start: 70px;
+    }
+
 }
 
 
@@ -144,6 +148,17 @@
     .main-layout>*:not(.full) {
         max-width: var(--medium);
     }
+
+    .control-box {
+        width: 450px;
+        height: 400px;
+        border-radius: 15px;
+        margin: 1rem;
+    }
+
+    .line-controller-btn.add-line {
+        margin-inline-start: 90px;
+    }
 }
 
 /* large */
@@ -151,5 +166,16 @@
 @media (min-width: 1040px) {
     .main-layout>*:not(.full) {
         max-width: var(--large);
+    }
+
+    .control-box {
+        width: 450px;
+        height: 400px;
+        border-radius: 15px;
+        margin: 1rem;
+    }
+
+    .line-controller-btn.add-line {
+        margin-inline-start: 90px;
     }
 }

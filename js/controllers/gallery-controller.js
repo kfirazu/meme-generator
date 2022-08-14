@@ -5,7 +5,7 @@ function onInit() {
 }
 
 function renderGallery() {
-    closeMemeEditor()
+    onOpenImgsGallery()
     const elGallery = document.querySelector('.img-gallery')
     const imgs = getImgs()
     const strHTMLs = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)
@@ -21,26 +21,27 @@ function toggleMenu() {
     document.body.classList.toggle('menu-opened');
 }
 
-function closeMemeEditor() {
+function onOpenImgsGallery() {
     document.querySelector('.meme-container').style.display = 'none'
     document.querySelector('.img-gallery-container').style.display = 'block'
     onResetMeme()
 }
 
-function onOpenSavedMemes(){
+function onOpenSavedMemes() {
     document.querySelector('.meme-container').style.display = 'none'
     document.querySelector('.img-gallery-container').style.display = 'block'
     renderSavedMemes()
-
 }
 
-function renderSavedMemes(){
+
+function renderSavedMemes() {
     const savedMemes = getSavedMemes()
     console.log('savedMemes:', savedMemes)
     const elSavedGallery = document.querySelector('.img-gallery')
-    const strHTMLs = savedMemes.map( meme => `<img src="${meme.url}" />`)
+    const strHTMLs = savedMemes.map(meme => `<img src="${meme.url}"  />`)
     elSavedGallery.innerHTML = strHTMLs.join('')
 }
+
 
 function renderRandomMeme() {
     let randomImgIdx = getRandomInt(0, gImgs.length - 1)
@@ -58,7 +59,7 @@ function renderRandomMeme() {
 }
 
 function onResetMeme() {
-   resetMeme()
+    resetMeme()
     let elText = document.querySelector('.text-input')
     elText.value = ''
 }
