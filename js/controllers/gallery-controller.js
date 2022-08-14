@@ -38,7 +38,7 @@ function renderSavedMemes(){
     const savedMemes = getSavedMemes()
     console.log('savedMemes:', savedMemes)
     const elSavedGallery = document.querySelector('.img-gallery')
-    const strHTMLs = savedMemes.map( meme => `<img src="${meme}" />`)
+    const strHTMLs = savedMemes.map( meme => `<img src="${meme.url}" />`)
     elSavedGallery.innerHTML = strHTMLs.join('')
 }
 

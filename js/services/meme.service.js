@@ -8,7 +8,8 @@ var gCanvas = {
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
-    lines: []
+    lines: [],
+    url: null
 }
 
 var gSavedMemes = getSavedMemes()
@@ -148,9 +149,10 @@ function uploadImg() {
     doUploadImg(imgDataUrl, onSuccess);
 }
 
-function saveMeme() {
-    const memeToSave = gElCanvas.toDataURL()
-    // const memeToSave = JSON.parse(JSON.stringify(gMeme))
+function saveMeme(memeToUrl) {
+    gMeme.url = memeToUrl
+    // const memeToSave = gElCanvas.toDataURL()
+    const memeToSave = JSON.parse(JSON.stringify(gMeme))
     gSavedMemes.push(memeToSave)
     saveToStorage(STORAGE_KEY, gSavedMemes)
 }

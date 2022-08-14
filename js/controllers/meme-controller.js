@@ -137,7 +137,8 @@ function resizeCanvas() {
 }
 
 function onSaveMeme(){
-    saveMeme()
+    const memeToUrl = gElCanvas.toDataURL()
+    saveMeme(memeToUrl)
 }
 
 function addListeners() {
