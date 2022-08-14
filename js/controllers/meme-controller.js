@@ -42,7 +42,7 @@ function drawLines(lines) {
 
 function onSetLineText(text) {
     const elText = document.querySelector('.text-input');
-    setLineText(text)
+    setLineTxt(text)
     renderMeme()
     setTimeout(() => setLineFocus(), 10);
 

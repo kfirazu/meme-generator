@@ -45,13 +45,7 @@ function getImgs() {
     return gImgs
 }
 
-function resetMeme() {
-    gMeme = {
-        selectedImgId: 1,
-        selectedLineIdx: 0,
-        lines: []
-    }
-}
+
 
 
 

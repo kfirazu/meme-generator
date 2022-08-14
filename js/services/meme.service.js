@@ -37,7 +37,7 @@ function getMeme() {
 }
 
 
-function setLineText(txt) {
+function setLineTxt(txt) {
     if (gMeme.lines.length === 0) {
         addLine()
     }
@@ -45,12 +45,14 @@ function setLineText(txt) {
 }
 
 function setTextColor(color) {
-    gMeme.lines[gMeme.selectedLineIdx].color = color
+    const line = getSelectedLine()
+    line.color = color
 }
 
 function increaseFontSize() {
-    if (gMeme.lines[gMeme.selectedLineIdx].size === 100) return
-    gMeme.lines[gMeme.selectedLineIdx].size += 10
+    const line = getSelectedLine()
+    if (line.size === 100) return
+    line.size += 10
 }
 
 function decreaseFontSize() {
@@ -83,6 +85,14 @@ function moveLineDown() {
 
 function getSelectedLine(){
    return gMeme.lines[gMeme.selectedLineIdx]
+}
+
+function resetMeme() {
+    gMeme = {
+        selectedImgId: 1,
+        selectedLineIdx: 0,
+        lines: []
+    }
 }
 
 function addLine(txt = ' ', size = 30, align = 'center', color = 'white', font = 'impact') {
