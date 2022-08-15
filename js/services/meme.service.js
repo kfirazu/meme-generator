@@ -79,7 +79,7 @@ function removeLine() {
 }
 
 function moveLineUp() {
-    line = getSelectedLine()
+    const line = getSelectedLine()
     if (line.pos.y === 20) return
     line.pos.y -= 10
 }
