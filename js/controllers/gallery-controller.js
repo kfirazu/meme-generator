@@ -5,7 +5,10 @@ function onInit() {
 }
 
 function renderGallery() {
-    onOpenImgsGallery()
+    console.log(':render gallery')
+    //  onOpenImgsGallery()
+    document.querySelector('.meme-container').style.display = 'none'
+    document.querySelector('.img-gallery-container').style.display = 'block'
     const elGallery = document.querySelector('.img-gallery')
     const imgs = getImgs()
     const strHTMLs = imgs.map(img => `<img onclick="onImgSelect('${img.id}')" src="${img.url}" >`)
@@ -35,6 +38,7 @@ function onOpenSavedMemes() {
 
 
 function renderSavedMemes() {
+    console.log('renderSavedMemes:')
     const savedMemes = getSavedMemes()
     console.log('savedMemes:', savedMemes)
     const elSavedGallery = document.querySelector('.img-gallery')
